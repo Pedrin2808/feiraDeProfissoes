@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router'; // Corrigido: 'react-router-dom' é o correto
+import { Link } from 'react-router';
 import './index.scss';
 
 const Temporizador = ({ dataAlvo }) => {
