@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+nav{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.botão{
+    background-color: yellow;
+    padding: 14px;
+    border-radius: 8px;
+}
+.temp{
+    font-size: 18px;
+}
