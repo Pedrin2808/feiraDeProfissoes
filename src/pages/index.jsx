@@ -107,32 +107,32 @@ export default function Index() {
           </div>
         </section>
         <section>
-          <img src="/src/assets/images/bigodeDoFrei.png" height="700px" alt="Logo" />
+          <img src="/src/assets/images/bigodeDoFrei.png" height="700px" alt="FREI" />
         </section>
       </section>
       <section className='bignumbers'>
         <div className='card'>
-          <img src="/src/assets/images/bigN1.png" height="80px" alt="n1"/>
+          <img src="/src/assets/images/bigN1.png" height="80px" alt="BIGn1"/>
           <h1>+3mil</h1>
          
         </div>
         <div className='card'>
-          <img src="/src/assets/images/bigN2.png" height="80px" alt="n2"/>
+          <img src="/src/assets/images/bigN2.png" height="80px" alt="BIGn2"/>
           <h1>+50mil</h1>
          
         </div>
         <div className='card'>
-          <img src="/src/assets/images/bigN3.png" height="80px" alt="n3"/>
+          <img src="/src/assets/images/bigN3.png" height="80px" alt="BIGn3"/>
           <h1>+9mil</h1>
          
         </div>
         <div className='card'>
-          <img src="/src/assets/images/bigN4.png" height="80px" alt="n4"/>
+          <img src="/src/assets/images/bigN4.png" height="80px" alt="BIGn4"/>
           <h1>+3mil</h1>
           
         </div>
         <div className='card'>
-          <img src="/src/assets/images/bigN5.png" height="80px" alt="n5"/>
+          <img src="/src/assets/images/bigN5.png" height="80px" alt="BIGn5"/>
           <h1>+12mil</h1>
           
         </div>
