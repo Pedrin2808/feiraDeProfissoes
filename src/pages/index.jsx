@@ -35,14 +35,20 @@ const Temporizador = ({ dataAlvo }) => {
       {chegou ? (
         <h2>🎉 Chegou a data!</h2>
       ) : (
-        <h2>
-          ⏳ Faltam {tempoRestante.dias}d {tempoRestante.horas}h{' '}
-          {tempoRestante.minutos}m {tempoRestante.segundos}s
-        </h2>
+        <div>
+          <h2>Começa Em:</h2>
+          <div className="contador">
+            <span>{tempoRestante.dias} Dias</span>
+            <span>{tempoRestante.horas} Horas</span>
+            <span>{tempoRestante.minutos} Min</span>
+            <span>{tempoRestante.segundos} Sg</span>
+          </div>
+        </div>
       )}
     </div>
   );
 };
+
 
 export default function Index() {
   return (
@@ -59,11 +65,85 @@ export default function Index() {
             <h1>Cursos</h1>
             <h1>Informações</h1>
             <h1>Sobre</h1>
-            <h1 className='botão'>Inscreva-se</h1>
+            <button className='b2'>Inscreva-se</button>
         </nav>
     </header>
     <main>
+      <section className='td'>
+        <section className='ladoE'>
+          <div className='futuro'>
+            <h1 className='maior'>O Futuro está Abordo</h1>
+            <h2 className='menor'>Feira de Profissões</h2>
+          </div>
 
+          <div className='arrumar'>
+            <div className='msm'>
+              <img src="/src/assets/images/data.png" height="16px" alt="Logo"/>
+              <p>Dia 27/Setembro | Das 9h às 14h</p>
+            </div>
+
+            <div className='msm2'>
+              <img src="/src/assets/images/localizacao.png" height="20px" alt="Logo"/>
+              <p>Av. Cel. Octaviano de Freitas Costa, 463 - Veleiros</p>
+            </div>
+          </div>
+
+          <div className='diminui'>
+            <p>
+              Vivencie na prática!
+              <br></br>
+              <br></br>
+              Na nossa feira, alunos de diferentes áreas vão
+              apresentar seus cursos de forma interativa,
+              mostrando projetos, experiências reais e tudo
+              que você precisa saber para escolher seu Futuro
+              com mais confiança.
+            </p>
+          </div>
+          <div>
+            <button>
+              Inscreva-se
+            </button>
+          </div>
+        </section>
+        <section>
+          <img src="/src/assets/images/bigodeDoFrei.png" height="700px" alt="Logo" />
+        </section>
+      </section>
+      <section className='bignumbers'>
+        <div className='card'>
+          <img src="/src/assets/images/bigN1.png" height="80px" alt="n1"/>
+          <h1>+3mil</h1>
+         
+        </div>
+        <div className='card'>
+          <img src="/src/assets/images/bigN2.png" height="80px" alt="n2"/>
+          <h1>+50mil</h1>
+         
+        </div>
+        <div className='card'>
+          <img src="/src/assets/images/bigN3.png" height="80px" alt="n3"/>
+          <h1>+9mil</h1>
+         
+        </div>
+        <div className='card'>
+          <img src="/src/assets/images/bigN4.png" height="80px" alt="n4"/>
+          <h1>+3mil</h1>
+          
+        </div>
+        <div className='card'>
+          <img src="/src/assets/images/bigN5.png" height="80px" alt="n5"/>
+          <h1>+12mil</h1>
+          
+        </div>
+      </section>
+      <div className='teste'>
+        <p>Jovens Atendidos por DIA</p>
+        <p>Alunos Formados</p>
+        <p>Jovens Ineridos no Mercado</p>
+        <p>Empresas Beneficiadas</p>
+        <p>Famílias Beneficiadas</p>
+      </div>
     </main>
     </body>
   );

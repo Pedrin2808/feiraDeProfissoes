@@ -4,6 +4,43 @@ header{
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
+    height: 110px;
+}
+
+.temporizador {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4px;
+  border-radius: 12px;
+  margin: auto;
+}
+
+.temporizador h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contador {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.contador span {
+  background-color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #0078d7;
+  min-width: 70px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
 }
 
 nav{
@@ -11,12 +48,97 @@ nav{
     gap: 25px;
     align-items: center;
 }
-
+h
 .botão{
-    background-color: yellow;
+    background-color: #f5ba53;
     padding: 14px;
     border-radius: 8px;
 }
 .temp{
     font-size: 18px;
+}
+
+.ladoE{
+    display: flex;
+    flex-direction: column;
+}
+
+.diminui{
+    width: 430px;
+    height: 235px;
+    padding-left: 30px;
+    font-size: 20px;
+}
+.futuro{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.td{
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(180deg,#3F6582,#7A94A9,#FFFFFF) ;
+    margin: 0px;
+}
+.maior{
+    font-size: 45px;
+}
+.menor{
+    font-size: 30px;
+}
+.msm{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: x-large;
+}
+.msm2{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: red;
+    font-weight: bolder;
+}
+.arrumar{
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 540px;
+
+}
+
+button{
+    background-color:#f5ba53 ;
+    padding: 20px 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 14px;
+    margin-left: 47px;
+}
+.b2{
+    background-color:#f5ba53 ;
+    padding: 10px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 14px;
+}
+
+.bignumbers{
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    background-color: #3F6582;
+    padding-top: 16px;
+}
+.card{
+    width: 95px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.teste{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #3F6582;
 }
