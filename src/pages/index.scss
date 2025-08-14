@@ -33,9 +33,10 @@ header{
   border-radius: 8px;
   font-size: 22px;
   font-weight: bold;
-  color: #0078d7;
+  color: black;
   min-width: 70px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
 }
 
 body{
@@ -48,7 +49,7 @@ nav{
     gap: 25px;
     align-items: center;
 }
-h
+
 .botão{
     background-color: #f5ba53;
     padding: 14px;
@@ -142,3 +143,143 @@ button{
     text-align: center;
     background-color: #3F6582;
 }
+
+.inverter{
+    
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+.text{
+    text-align: center;
+    width: 400px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.img{
+    border-radius: 20px;
+}
+.titulo2{
+    background-color: #f5ba53;
+    padding: 20px;
+    border-radius: 14px;
+    width: 250px;
+    position: absolute;
+    margin-top: -30px;
+   
+}
+
+.text2{
+    text-align: center;
+    background-color: #3F6582;
+    width: 450px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 12px;
+    height: 250px;
+    font-size: x-large;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.cursos{
+    display: flex;
+    justify-content: center;   
+}
+.tt{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+
+.fun {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/src/assets/images/adm.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    width: 1600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.banner {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    font-size: x-large;
+  }
+
+  .banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .banner p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .centralize{
+    display: flex;
+    justify-content: center;
+    animation: slide 8s infinite;
+  }
+  
+
+
+.parte2 {
+    overflow: hidden; /* esconde imagens fora do espaço */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+  }
+  
+  .parte2 img {
+    object-fit: cover; /* ajusta imagem sem distorcer */
+  }
+  
+  /* Animação de deslizamento */
+  @keyframes slide {
+    0%   { transform: translateX(0); }
+    33%  { transform: translateX(-500px); }
+    66%  { transform: translateX(-1000px); }
+    100% { transform: translateX(0); }
+  }
+
+  .prev, .next {
+    margin-top: 980px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
