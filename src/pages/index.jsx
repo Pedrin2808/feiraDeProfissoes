@@ -175,7 +175,7 @@ export default function Index() {
           </div>
 
           <div className='centralize'>
-            <div className='fun'>
+            <div className='fun2'>
                 <div class="banner">
                   <h1>Informática</h1>
                   <p className='aumentar'>O curso que abre portas para o futuro.</p>
