@@ -49,9 +49,25 @@ const Temporizador = ({ dataAlvo }) => {
   );
 };
 
+let images = [
+  "/src/assets/images/adm2.png",
+  "/src/assets/images/info2.png",
+  "/src/assets/images/cv2.png"
+];
 
 
 export default function Index() {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
   return (
     <body>
         <header>
@@ -150,41 +166,26 @@ export default function Index() {
         <h1 className='tt'>Cursos</h1>
 
         <section className='cursos'>
-          <div className='carousel'>
             <div className='flex'>
                   <img className= 'img'src="/src/assets/images/adm.png" height = "800px" alt="ImgADM"/>
               <div className='text'>
                 <h2 className='titulo2' >Administração</h2>
                 <p className='text2'>Administração: o curso que abre portas Se você gosta de liderar, planejar e resolver problemas, Administração é pra você!</p>
               </div>
-              <button class="prev">&#10094;</button>
-              <button class="next">&#10095;</button>
-            </div>
           </div>
         </section>
-       
-        <section className='parte2'>
-          <div className='centralize'>
-            <div className='fun'>
-                <div class="banner">
-                  <h1>Administração</h1>
-                  <p className='aumentar'>O curso que abre portas para o futuro.</p>
-                  <p className='aumentar'>Se você gosta de liderar, planejar e resolver problemas, Administração é pra você!</p>
-                </div>
-              </div>
-          </div>
 
-          <div className='centralize'>
-            <div className='fun2'>
-                <div class="banner">
-                  <h1>Informática</h1>
-                  <p className='aumentar'>O curso que abre portas para o futuro.</p>
-                  <p>Informática: tecnologia para o futuro. Aprenda a programar, montar computadores e criar sistemas.</p>
-                  </div>
-              </div>
-          </div>
-        </section>
+        <div className="carousel">
+      <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+      <button className="carousel-btn prev" onClick={prevSlide}>
+        &#10094;
+      </button>
+      <button className="carousel-btn next" onClick={nextSlide}>
+        &#10095;
+      </button>
+    </div>
       </main>
     </body>
   );
 }
+
