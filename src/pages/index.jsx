@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const logos = [
   { src: '/src/assets/images/serpro.png', alt: 'Serpro' },
@@ -24,6 +25,28 @@ const logos = [
   { src: '/src/assets/images/cidadesp.png', alt: 'Prefeitura' },
 ];
 
+
+const containerStyle = {
+  width: '100%',
+  height: '300px',
+  maxWidth: '800px',
+  margin: '0 auto'
+};
+
+const center = {
+  lat: -23.6525,
+  lng: -46.7156,
+};
+
+function Mapa() {
+  return (
+    <LoadScript googleMapsApiKey="SUA_API_KEY_AQUI">
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+        <Marker position={center} />
+      </GoogleMap>
+    </LoadScript>
+  );
+}
 
 
 const Temporizador = ({ dataAlvo }) => {
@@ -310,6 +333,10 @@ export default function Index() {
             <button className='zap'>Atendimento via WhatsApp</button>
           </div>
         </div>
+      </section>
+      <section id='map' >
+      <h1 className="tt">Local do Evento</h1>
+        <Mapa />
       </section>
       </main>
     </body>
