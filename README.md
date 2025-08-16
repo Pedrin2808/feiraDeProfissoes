@@ -1,12 +1,53 @@
-# React + Vite
+# 👋 Olá, eu sou José!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <strong>Desenvolvedor Web</strong> |
+  <span style="color:blue">HTML</span> |
+  <span style="color:blue">CSS</span> |
+  <span style="color:blue">JavaScript</span> |
+  <span style="background-color:green;color:white">Node.js</span> |
+  <span style="background-color:green;color:white">React</span>
+</div>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![dev-image](https://cdn.dribbble.com/users/1162077/screenshots/3848914/media/7ed7d5ca7bc204d565928049a40f005e.gif)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Sobre o Projeto – Feira de Profissões
+
+**Feira de Profissões** é um projeto desenvolvido com o objetivo de apresentar diferentes profissões de forma interativa, voltado principalmente para estudantes do ensino médio e eventos educacionais. O foco é proporcionar uma experiência de navegação intuitiva e educativa utilizando tecnologias web modernas.
+
+### 💡 Funcionalidades:
+- Interface moderna e responsiva
+- Conteúdo sobre várias profissões
+- Navegação dinâmica com Vite + JavaScript
+- Estilização com SCSS
+
+---
+
+## 🧑‍💻 Sobre mim
+
+Sou um entusiasta da tecnologia em transição de carreira, apaixonado por resolver problemas com código. Atualmente estou focado em aprender desenvolvimento web com **JavaScript**, **Node.js** e **React**.
+
+- 🔎 Buscando minha primeira oportunidade na área de tecnologia  
+- 📚 Estudando algoritmos, estrutura de dados e boas práticas de programação  
+- 💡 Curioso, criativo e sempre pronto para aprender algo novo  
+
+---
+
+## 🛠️ Tecnologias e Ferramentas que estou aprendendo
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="HTML5" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="CSS3" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="JavaScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="React" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="Node.js" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="MySQL" />
+</div>
+
+---
+
+Ainda em desenvolvimento...
