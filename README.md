@@ -1,19 +1,4 @@
-# 👋 Olá, eu sou José!
 
-<div align="center">
-  <strong>Desenvolvedor Web</strong> |
-  <span style="color:blue">HTML</span> |
-  <span style="color:blue">CSS</span> |
-  <span style="color:blue">JavaScript</span> |
-  <span style="background-color:green;color:white">Node.js</span> |
-  <span style="background-color:green;color:white">React</span>
-</div>
-
----
-
-![dev-image](https://cdn.dribbble.com/users/1162077/screenshots/3848914/media/7ed7d5ca7bc204d565928049a40f005e.gif)
-
----
 
 ## 🧠 Sobre o Projeto – Feira de Profissões
 
