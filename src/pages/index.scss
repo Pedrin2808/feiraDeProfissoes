@@ -196,8 +196,24 @@ button{
 
 .cursos{
     display: flex;
-    justify-content: center;   
+    justify-content: center;  
+    grid-auto-flow: column; 
+    grid-auto-columns: 16rem;
+    animation: animate 10s linear infinite;
+    gap: 160px;
 }
+  
+    @keyframes animate{
+      to{
+        translate: calc(-5*16rem);
+      }
+    }
+
+
+.cursos:hover {
+  animation-play-state: paused;
+}
+
 .tt{
     display: flex;
     justify-content: center;
@@ -309,3 +325,122 @@ button{
   .next {
     right: 10px;
   }
+
+  .hist{
+    margin: 25px 0px;
+    padding: 25px 0px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(0deg, #ffffff 0%, #BDC6CDE4 10.31%, #5F7586BD 50%,#BDC6CDE4 89.47% , #ffffff 100%);
+  }
+
+  .frei1{
+    height: 300px;
+  }
+
+  .frei2{
+      height: 220px;
+      width: 300px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      margin-top: 230px;
+      margin-left: 130px;
+  }
+
+  .imagens{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 230px;
+  }
+  .tex{
+    text-align: left;
+    width: 420px;
+    font-size: 20px;
+    margin: 0px 50px;
+  }
+
+  .carrossel-container {
+  padding: 40px 20px;
+}
+
+.logo-parceiro {
+  height: 160px;
+  width: auto;
+  margin: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-parceiro:hover {
+  transform: scale(1.05);
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-item {
+  background: #f1f1f1;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background: #e0e0e0;
+}
+
+.faq-question {
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  color: #333;
+}
+
+.faq-item.active .faq-question {
+  color: #007acc;
+}
+
+.faq-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aindaCdV{
+  display: flex;
+  flex-direction: column;
+  border: solid black 4px;
+  width: 300px;
+  margin-right: 10px;
+  padding: 20px;
+  border-radius: 8px;
+}
+.peq{
+  font-size: 10px;
+  font-weight: bolder;
+}
+.email{
+  background-color:#6faace ;
+  padding: 10px ;
+  border-radius: 5px;
+}
+.zap{
+  background-color:#7eb07f;
+  padding: 10px ;
+  border-radius: 5px;
+}
+
+.buts{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,6 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import './index.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const logos = [
+  { src: '/src/assets/images/serpro.png', alt: 'Serpro' },
+  { src: '/src/assets/images/mwm.png', alt: 'MWM' },
+  { src: '/src/assets/images/help.png', alt: 'Help Transportes' },
+  { src: '/src/assets/images/clinear.png', alt: 'CM' },
+  { src: '/src/assets/images/olymp.png', alt: 'Olymp' },
+  { src: '/src/assets/images/pwi.png', alt: 'PWI' },
+  { src: '/src/assets/images/aps.png', alt: 'APS' },
+  { src: '/src/assets/images/mapfre.png', alt: 'MAPFRE' },
+  { src: '/src/assets/images/unisa.png', alt: 'UNISA' },
+  { src: '/src/assets/images/italo.png', alt: 'Italo' },
+  { src: '/src/assets/images/casadamulher.png', alt: 'CMP' },
+  { src: '/src/assets/images/vgrajau.png', alt: 'vGrajau' },
+  { src: '/src/assets/images/reidopall.png', alt: 'rdoPallet' },
+  { src: '/src/assets/images/maracatu.png', alt: 'Maracatu' },
+  { src: '/src/assets/images/cidadesp.png', alt: 'Prefeitura' },
+];
+
+
 
 const Temporizador = ({ dataAlvo }) => {
   const [tempoRestante, setTempoRestante] = useState({});
@@ -56,16 +80,69 @@ let images = [
 ];
 
 
+const FAQ = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const faqData = [
+    {
+      question: 'A entrada é gratuita ou paga?',
+      answer:'Gratuitaaaaaa',
+    },
+    {
+      question: 'Preciso ser aluno para participar?',
+      answer: 'Nãoooo.',
+    },
+    {
+      question: 'Meus pais podem vir junto?',
+      answer: 'Claroooo que sim',
+    },
+    {
+      question: 'Preciso fazer inscrição antes ou possso chegar na hora?',
+      answer: 'Essa nem eu sei',
+    },
+    {
+      question: 'Qual é o horário e o local exato do evento?',
+      answer: 'A atualizar...',
+    },
+    {
+      question: 'Vai ter certificado de participação?',
+      answer: 'Veremos...',
+    },
+  ];
+
+  const toggle = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
+  return (
+    <div className="faq">
+      {faqData.map((item, index) => (
+        <div
+          key={index}
+          className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+          onClick={() => toggle(index)}
+        >
+          <div className="faq-question">{item.question}</div>
+          {activeIndex === index && (
+            <div className="faq-answer">{item.answer}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export default function Index() {
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [currentIndex, setCurrentIndex] = useState(0); //animação infinita
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setCurrentIndex((prev) => (prev + 1) % images.length); //botao direita
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)//botao esquerda
   }
 
   return (
@@ -167,23 +244,73 @@ export default function Index() {
 
         <section className='cursos'>
             <div className='flex'>
-                  <img className= 'img'src="/src/assets/images/adm.png" height = "800px" alt="ImgADM"/>
+                  <img className= 'img'src="/src/assets/images/adm.png" height = "500px" alt="ImgADM"/>
               <div className='text'>
                 <h2 className='titulo2' >Administração</h2>
                 <p className='text2'>Administração: o curso que abre portas Se você gosta de liderar, planejar e resolver problemas, Administração é pra você!</p>
               </div>
           </div>
+
         </section>
 
         <div className="carousel">
-      <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
-      <button className="carousel-btn prev" onClick={prevSlide}>
-        &#10094;
-      </button>
-      <button className="carousel-btn next" onClick={nextSlide}>
-        &#10095;
-      </button>
-    </div>
+          <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+          <button className="carousel-btn prev" onClick={prevSlide}>
+            &#10094;
+          </button>
+          <button className="carousel-btn next" onClick={nextSlide}>
+            &#10095;
+          </button>
+        </div>
+
+
+    <h1 className='tt'>Conheça Nossa História</h1>
+    <section className='hist'>
+      <div className='tex'>
+          <p>Fundado em 1971, pelo Frei Xavier (como é carinhosamente conhecido), o Instituto Social Nossa Senhora de Fátima é uma instituição sem fins lucrativos, localizado na zona sul de São Paulo, tem sido um farol para o desenvolvimento humano e profissional de jovens a partir de 13 anos. Com duas unidades de ensino, o instituto dedica-se a capacitá-los por meio da oferta de cursos técnicos, de qualificação e livres, proporcionando oportunidades valiosas para o crescimento pessoal e profissional do ser humano. Sua trajetória é marcada pelo compromisso contínuo com impacto positivo na comunidade, a educação e o crescimento sólido da juventude.​</p>
+      </div>
+      <div className='imagens'>
+          <img className='frei1' src='/src/assets/images/frei1.png' alt = 'frei1'/>
+          <img className='frei2' src='/src/assets/images/frei2.png' alt = 'frei2'/>
+      </div>
+    </section>
+    
+      <h1 className='tt'>Parceiros</h1>
+      <section className="carrossel-container">
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={4}
+        navigation
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
+        breakpoints={{
+          320: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+        }}
+      >
+        {logos.map((logo, index) => (
+          <SwiperSlide key={index}>
+            <img src={logo.src} alt={logo.alt} className="logo-parceiro"/>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+    <h1 className="tt">Dúvidas Frequentes</h1>
+      <section className="faq-section">
+        <div>
+          <FAQ />
+        </div>
+        <div className='aindaCdV'>
+          <p className='peq'>AINDA COM DÚVIDAS?</p>
+          <p>Fale com a gente agora pelo WhatsApp ou Email e tire todas as suas dúvidas.</p>
+          <div className='buts'>
+            <button className='email'>Atendimento via Email</button>
+            <button className='zap'>Atendimento via WhatsApp</button>
+          </div>
+        </div>
+      </section>
       </main>
     </body>
   );
