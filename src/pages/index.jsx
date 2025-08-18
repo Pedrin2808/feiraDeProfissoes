@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
 
 const logos = [
   { src: '/src/assets/images/serpro.png', alt: 'Serpro' },
@@ -26,28 +26,7 @@ const logos = [
 ];
 
 
-const containerStyle = {
-  width: '100%',
-  height: '300px',
-  maxWidth: '800px',
-  margin: '0 auto'
-};
 
-const center = {
-  lat: -23.6525,
-  lng: -46.7156,
-};
-
-function Mapa() {
-  return (
-    <LoadScript googleMapsApiKey="SUA_API_KEY_AQUI">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-        <Marker position={center} />
-      </GoogleMap>
-    </LoadScript>
-  );
-}
-//
 
 const Temporizador = ({ dataAlvo }) => {
   const [tempoRestante, setTempoRestante] = useState({});
@@ -186,82 +165,84 @@ export default function Index() {
           </nav>
       </header>
       <main>
-        <section className='td'>
-          <section className='ladoE'>
-            <div className='futuro'>
-              <h1 className='maior'>O Futuro está Abordo</h1>
-              <h2 className='menor'>Feira de Profissões</h2>
-            </div>
-
-            <div className='arrumar'>
-              <div className='msm'>
-                <img src="/src/assets/images/data.png" height="16px" alt="Logo"/>
-                <p>Dia 27/Setembro | Das 9h às 14h</p>
+        <section className='gradiente'>
+          <section className='td'>
+            <section className='ladoE'>
+              <div className='futuro'>
+                <h1 className='maior'>O Futuro está Abordo</h1>
+                <h2 className='menor'>Feira de Profissões</h2>
               </div>
 
-              <div className='msm2'>
-                <img src="/src/assets/images/localizacao.png" height="20px" alt="Logo"/>
-                <p>Av. Cel. Octaviano de Freitas Costa, 463 - Veleiros</p>
+              <div className='arrumar'>
+                <div className='msm'>
+                  <img src="/src/assets/images/data.png" height="16px" alt="Logo"/>
+                  <p>Dia 27/Setembro | Das 9h às 14h</p>
+                </div>
+
+                <div className='msm2'>
+                  <img src="/src/assets/images/localizacao.png" height="20px" alt="Logo"/>
+                  <p>Av. Cel. Octaviano de Freitas Costa, 463 - Veleiros</p>
+                </div>
               </div>
-            </div>
 
-            <div className='diminui'>
-              <p>
-                Vivencie na prática!
-                <br></br>
-                <br></br>
-                Na nossa feira, alunos de diferentes áreas vão
-                apresentar seus cursos de forma interativa,
-                mostrando projetos, experiências reais e tudo
-                que você precisa saber para escolher seu Futuro
-                com mais confiança.
-              </p>
-            </div>
-            <div>
-              <button>
-                Inscreva-se
-              </button>
-            </div>
+              <div className='diminui'>
+                <p>
+                  Vivencie na prática!
+                  <br></br>
+                  <br></br>
+                  Na nossa feira, alunos de diferentes áreas vão
+                  apresentar seus cursos de forma interativa,
+                  mostrando projetos, experiências reais e tudo
+                  que você precisa saber para escolher seu Futuro
+                  com mais confiança.
+                </p>
+              </div>
+              <div>
+                <button>
+                  Inscreva-se
+                </button>
+              </div>
+            </section>
+            <section>
+              <img className='inverter' src="/src/assets/images/bigodeDoFrei.png" height="700px" alt="FREI" />
+            </section>
           </section>
-          <section>
-            <img className='inverter' src="/src/assets/images/bigodeDoFrei.png" height="700px" alt="FREI" />
+          <section className='bignumbers'>
+            
+            <div className='card'>
+              <img src="/src/assets/images/bigN1.png" height="80px" alt="BIGn1"/>
+              <h1>+3mil</h1>
+            </div>
+
+            <div className='card'>
+              <img src="/src/assets/images/bigN2.png" height="80px" alt="BIGn2"/>
+              <h1>+50mil</h1>
+            </div>
+
+            <div className='card'>
+              <img src="/src/assets/images/bigN3.png" height="80px" alt="BIGn3"/>
+              <h1>+9mil</h1>
+            </div>
+
+            <div className='card'>
+              <img src="/src/assets/images/bigN4.png" height="80px" alt="BIGn4"/>
+              <h1>+3mil</h1>
+            </div>
+
+            <div className='card'>
+              <img src="/src/assets/images/bigN5.png" height="80px" alt="BIGn5"/>
+              <h1>+12mil</h1>
+            </div>
+
           </section>
+          <div className='teste'>
+            <p>Jovens Atendidos por DIA</p>
+            <p>Alunos Formados</p>
+            <p>Jovens Ineridos no Mercado</p>
+            <p>Empresas Beneficiadas</p>
+            <p>Famílias Beneficiadas</p>
+          </div>
         </section>
-        <section className='bignumbers'>
-          
-          <div className='card'>
-            <img src="/src/assets/images/bigN1.png" height="80px" alt="BIGn1"/>
-            <h1>+3mil</h1>
-          </div>
-
-          <div className='card'>
-            <img src="/src/assets/images/bigN2.png" height="80px" alt="BIGn2"/>
-            <h1>+50mil</h1>
-          </div>
-
-          <div className='card'>
-            <img src="/src/assets/images/bigN3.png" height="80px" alt="BIGn3"/>
-            <h1>+9mil</h1>
-          </div>
-
-          <div className='card'>
-            <img src="/src/assets/images/bigN4.png" height="80px" alt="BIGn4"/>
-            <h1>+3mil</h1>
-          </div>
-
-          <div className='card'>
-            <img src="/src/assets/images/bigN5.png" height="80px" alt="BIGn5"/>
-            <h1>+12mil</h1>
-          </div>
-
-        </section>
-        <div className='teste'>
-          <p>Jovens Atendidos por DIA</p>
-          <p>Alunos Formados</p>
-          <p>Jovens Ineridos no Mercado</p>
-          <p>Empresas Beneficiadas</p>
-          <p>Famílias Beneficiadas</p>
-        </div>
 
         <h1 className='tt'>Cursos</h1>
 
@@ -336,10 +317,11 @@ export default function Index() {
       </section>
       <section id='map' >
       <h1 className="tt">Local do Evento</h1>
-        <Mapa />
+        <section className='mapa'> 
+          <iframe className='mapinha' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.8776429335453!2d-46.71050045936396!3d-23.680333278806863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755554253390!5m2!1spt-BR!2sbr" width="90%" height="650px" allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
       </section>
       </main>
     </body>
   );
 }
-

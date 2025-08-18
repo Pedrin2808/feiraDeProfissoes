@@ -76,10 +76,13 @@ nav{
     flex-direction: column;
     align-items: center;
 }
+.gradiente{
+  background: linear-gradient(180deg,#285193B2,#8FB3CEF0 90%,#FFFFFF) ;
+}
 .td{
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(180deg,#3F6582,#7A94A9,#FFFFFF) ;
+  
     margin: 0px;
 }
 .maior{
@@ -126,7 +129,7 @@ button{
     display: flex;
     gap: 15px;
     justify-content: space-around;
-    background-color: #3F6582;
+///
     padding-top: 16px;
 }
 .card{
@@ -141,7 +144,7 @@ button{
     display: flex;
     justify-content: space-around;
     text-align: center;
-    background-color: #3F6582;
+///
 }
 
 .inverter{
@@ -443,4 +446,13 @@ button{
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.mapa{
+  display: flex;
+  justify-content: center;
+}
+
+.mapinha{
+  border-radius: 36px;
 }
