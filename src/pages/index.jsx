@@ -136,6 +136,15 @@ const FAQ = () => {
 
 export default function Index() {
 
+  const [nome , setNome] = useState ()
+  const [telefone , setTelefone] = useState ()
+  const [email , setEmail] = useState ()
+  const [previsao , setPrevisao] = useState ()
+  const [cpf , setCpf] = useState ()
+  const [cep , setCep] = useState ()
+  const [interesse , setInteresse] = useState ()
+  const [aluno , setAluno] = useState ()
+  const [sabendo , setSabendo] = useState ()
 
   const [currentIndex, setCurrentIndex] = useState(0); //animação infinita
 
@@ -148,7 +157,7 @@ export default function Index() {
   }
 
   return (
-    <body>
+    <div className='body'>
         <header>
           <div>
               <img src="/src/assets/images/feiradep.png" height="90px" alt="Logo" />
@@ -317,11 +326,47 @@ export default function Index() {
       </section>
       <section id='map' >
       <h1 className="tt">Local do Evento</h1>
-        <section className='mapa'> 
-          <iframe className='mapinha' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.8776429335453!2d-46.71050045936396!3d-23.680333278806863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755554253390!5m2!1spt-BR!2sbr" width="90%" height="650px" allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <section className = "maps">
+          <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.877780335286!2d-46.710505823997686!3d-23.68032836597489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755524751181!5m2!1spt-BR!2sbr" width="90%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </section>
       </section>
+      <h1 className='tt'>Formulário</h1>
+        <section className='forms'>
+        <div className='colorir1'>
+            <div className='colorir2'>
+              <div className='oi'>
+              <div className='vertical1'>
+                <label>Nome</label>
+                <input value={nome} onChange = {(e)=> setNome(e.target.value)}/>
+                <label>Telefone</label>
+                <input value={telefone} onChange = {(e)=> setTelefone(e.target.value)}/>
+                <label>Email</label>
+                <input value={email} onChange = {(e)=> setEmail(e.target.value)}/>
+                <label>Previsão de chegada à feira</label>
+                <input value={previsao} onChange = {(e)=> setPrevisao(e.target.value)}/>
+              </div>
+              <div className='vertical1'>
+                <label>CPF</label>
+                <input value={cpf} onChange = {(e)=> setCpf(e.target.value)}/>
+                <label>CEP</label>
+                <input value={cep} onChange = {(e)=> setCep(e.target.value)}/>
+                <label>Interesse em algum curso</label>
+                <input value={interesse} onChange = {(e)=> setInteresse(e.target.value)}/>
+                <label>ja foi aluno?</label>
+                <input value={aluno} onChange = {(e)=> setAluno(e.target.value)}/>
+              </div>
+              </div>
+              <div className='horizonte'>
+                <label>Como ficou sabendo da feira?</label>
+                <input value={sabendo} onChange = {(e)=> setSabendo(e.target.value)}/>
+              </div>
+              <div className='vai'>
+              <button className='b4'>Confirmar Inscrição</button>
+              </div>
+            </div>
+        </div>
+        </section>
       </main>
-    </body>
+    </div>
   );
 }
