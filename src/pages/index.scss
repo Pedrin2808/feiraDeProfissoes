@@ -116,13 +116,17 @@ button{
   padding: 20px 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 14px;
-  margin-left: 47px;
+  
 }
 .b2{
   background-color:#f5ba53 ;
   padding: 10px 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 14px;
+  margin-left: 47px;
+}
+.b3{
+  margin-left: 47px;
 }
 
 .bignumbers{
@@ -329,14 +333,20 @@ animation-play-state: paused;
   right: 10px;
 }
 
-.hist{
+.lets{
   margin: 25px 0px;
   padding: 25px 0px;
   height: 500px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(0deg, #ffffff 0%, #BDC6CDE4 10.31%, #5F7586BD 50%,#BDC6CDE4 89.47% , #ffffff 100%);
 }
+
+.gradiente{
+  padding-top: 25px;
+  margin-top: 25px;
+  background: linear-gradient(0deg, #ffffff 0%, #9DC3F6BD 10.31%, #9DC3F6BD 50%,#9DC3F6BD 89.47% , #ffffff 100%);
+}
+
 
 .frei1{
   height: 300px;
@@ -359,9 +369,10 @@ animation-play-state: paused;
 }
 .tex{
   text-align: left;
-  width: 420px;
+  width: 460px;
   font-size: 20px;
   margin: 0px 50px;
+  overflow: hidden;
 }
 
 .carrossel-container {
@@ -491,26 +502,58 @@ input {
   padding: 30px;
   border: 2px solid  black;  
   border-radius: 50px;
-  position: relative;
-  z-index: 1;
   background-color: #2F5D80D1;
 }
 .colorir2{
   padding: 30px;
   border: 2px solid  black;  
   border-radius: 50px;
-z-index: 2;
-background-color: white;
-width: 700px;
-display: flex;
-flex-direction: column;
-align-items: center;
+  background-color: white;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .vai{
   display:flex;
   text-align: center;
-align-items: center;
+  align-items: center;
 }
 .b4{
   width: 486px;
+}
+
+footer{
+  background-color: black;
+  height: 250px;
+  margin-top: 50px;
+}
+
+.fundope{
+  margin: 10px;
+  border-bottom: 5px solid white;
+  padding-bottom:25px ;
+}
+
+.f1{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.branco{
+  color: white;
+  text-align: end;
+  margin-top: 25px;
+}
+
+.redes{
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+
+}
+
+.ajuste{
+  margin-top: 25px;
 }
