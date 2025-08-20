@@ -135,6 +135,10 @@ const FAQ = () => {
 };
 
 export default function Index() {
+  const curso = ['ADM', 'TI', 'CV', 'Inglês', 'Eletrotecnica']; 
+  const alunoo = ['Sim', 'Não']; 
+  const sabendoo = ['Amigos', 'Familiares', 'Redes Sociais']; 
+
 
   const [nome , setNome] = useState ()
   const [telefone , setTelefone] = useState ()
@@ -178,7 +182,7 @@ export default function Index() {
           <section className='td'>
             <section className='ladoE'>
               <div className='futuro'>
-                <h1 className='maior'>O Futuro está Abordo</h1>
+                <h1 className='maior'>O Futuro está A bordo</h1>
                 <h2 className='menor'>Feira de Profissões</h2>
               </div>
 
@@ -351,16 +355,40 @@ export default function Index() {
                 <input value={cpf} onChange = {(e)=> setCpf(e.target.value)}/>
                 <label>CEP</label>
                 <input value={cep} onChange = {(e)=> setCep(e.target.value)}/>
-                <label>Interesse em algum curso</label>
-                <input value={interesse} onChange = {(e)=> setInteresse(e.target.value)}/>
-                <label>ja foi aluno?</label>
-                <input value={aluno} onChange = {(e)=> setAluno(e.target.value)}/>
+                <label  htmlFor='input-curso'>Interesse em algum curso</label>
+                <input type="text"
+                id="input-curso" 
+                list="lista-curso" value={interesse} onChange = {(e)=> setInteresse(e.target.value)}/>
+
+      <datalist id="lista-curso"> 
+        {curso.map((curso, index) => (
+          <option key={index} value={curso} />
+        ))}
+      </datalist>
+                <label htmlFor='input-aluno'>ja foi aluno?</label>
+                <input type="text"
+                id="input-aluno" 
+                list="lista-aluno" value={aluno} onChange = {(e)=> setAluno(e.target.value)}/>
+
+      <datalist id="lista-aluno"> 
+        {alunoo.map((aluno, index) => (
+          <option key={index} value={aluno} />
+        ))}
+      </datalist>
               </div>
               </div>
               <div className='horizonte'>
-                <label>Como ficou sabendo da feira?</label>
-                <input value={sabendo} onChange = {(e)=> setSabendo(e.target.value)}/>
-              </div>
+                <label htmlFor='input-sabendo'>Como ficou sabendo da feira?</label>
+                <input type="text"
+                id="input-sabendo" 
+                list="lista-sabendo" value={sabendo} onChange = {(e)=> setSabendo(e.target.value)}/>
+
+      <datalist id="lista-sabendo"> 
+        {sabendoo.map((sabendo, index) => (
+          <option key={index} value={sabendo} />
+        ))}
+      </datalist>         
+           </div>
               <div className='vai'>
               <button className='b4'>Confirmar Inscrição</button>
               </div>

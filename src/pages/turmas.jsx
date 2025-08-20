@@ -4,7 +4,7 @@ import './turmas.scss'
 
 export default function login(){
     const [usuario, setUsuario] = useState()
-
+const turmas = ['Eletromecânica', 'Eletrotécnica', 'Adminstração', 'Informatica', 'Comunicação Visual', 'Inglês']
 
     return(
         <div>
@@ -15,9 +15,16 @@ export default function login(){
                 <h1 className='tt'>Salas</h1>
                 <div className='ajust'>
                     <div className='ajust'>
-                        <label className='esquerda'>Selecione</label>
-                        <input value={usuario} onChange = {(e)=> setUsuario(e.target.value)}/>
-                    </div>
+                        <label className='esquerda'htmlFor='input-turmas'>Selecione</label>
+                        <input type="text"
+                id="input-turmas" 
+                list="lista-turmas" value={usuario} onChange = {(e)=> setUsuario(e.target.value)}/>
+
+      <datalist id="lista-turmas"> 
+        {turmas.map((turmas, index) => (
+          <option key={index} value={turmas} />
+        ))}
+      </datalist>                       </div>
                         <button className='b5'>Entrar</button>
                 </div>
             </div>

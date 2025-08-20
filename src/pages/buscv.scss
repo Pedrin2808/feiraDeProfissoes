@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+    /* Altera a direção da flexbox e remove o espaçamento para caber na tela */
+    .fundo {
+      padding: 50px 20px; /* Reduz o padding para não ocupar muito espaço vertical */
+    }
+  
+    /* Alinha os itens em uma única coluna */
+    .ajust, .arr, .adjus {
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* Centraliza o texto */
+      margin-top: 50px; /* Reduz o espaçamento superior */
+      gap: 30px; /* Reduz o espaçamento entre os elementos */
+    }
+  
+    /* Remove os paddings laterais desnecessários em telas pequenas */
+    .esquerda, .esquerda2 {
+      padding-right: 0;
+    }
+    
+    .arr {
+        gap: 50px; /* Um espaçamento mais adequado para mobile */
+    }
+  
+    /* Geralmente, elementos com margin-top fixo podem causar problemas em mobile.
+       O ideal é ajustar ou remover. */
+    .adjus, .arr {
+        margin-top: 50px;
+    }
+  }
