@@ -67,17 +67,31 @@ nav{
 .diminui{
   width: 430px;
   height: 235px;
-  padding-left: 30px;
   font-size: 20px;
 }
+
+.negativo{
+  margin-top: -29px;
+  padding-left: 20px;
+}
+.meio{
+  display: flex ;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.b{
+  margin-bottom: 20px;
+}
+
 .futuro{
-  width: 500px;
+  width: 690px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
 }
-.gradiente{
-background: linear-gradient(180deg,#285193B2,#8FB3CEF0 90%,#FFFFFF) ;
+.gradiente1{
+  background: linear-gradient(to bottom,#387DB2B2 69%,#61A2D41A 93% ,#FFFFFF 100%) ;
 }
 .td{
   display: flex;
@@ -86,13 +100,21 @@ background: linear-gradient(180deg,#285193B2,#8FB3CEF0 90%,#FFFFFF) ;
   margin: 0px;
 }
 .maior{
-  font-size: 45px;
+  font-size: 30px;
+  color: white;
+  padding: 30px;
+}
+.aj{
+  display: flex;
+  justify-content: start;
+  margin-left: 80px;
 }
 
 .menor{
   font-size: 30px;
-
+  color: #F5BA53;
 }
+
 .msm{
   display: flex;
   align-items: center;
@@ -107,10 +129,25 @@ background: linear-gradient(180deg,#285193B2,#8FB3CEF0 90%,#FFFFFF) ;
   font-weight: bolder;
 }
 .arrumar{
-  border: 3px solid black;
+  border: 3px solid #9DC3F6BD;
   border-radius: 10px;
   width: 540px;
+  margin: 3px;
+}
 
+.heig{
+  position: absolute;
+  margin-left:-60px ;
+  margin-top: -60px;
+}
+
+.arrumar2{
+  border: 3px solid #9DC3F6BD;
+  border-radius: 10px;
+  width: 468px;
+  max-width: 32.5%;
+  margin: 3px;
+  position: relative;
 }
 
 button{
@@ -119,6 +156,12 @@ button{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 14px;
   
+}
+
+.corw{
+  color: white;
+  font-size: 26px;
+  padding-left: 20px;
 }
 .b2{
   background-color:#f5ba53 ;
@@ -212,12 +255,8 @@ button{
   gap: 160px;
 }
 
-  @keyframes animate{
-    to{
-      translate: calc(-5*16rem);
-    }
-  }
 
+  
 
 .cursos:hover {
 animation-play-state: paused;
@@ -229,7 +268,69 @@ animation-play-state: paused;
   padding: 20px 0px;
 }
 
+.cursos {
+  position: relative;
+  padding: 40px 0;
+}
 
+.cursos-swiper {
+  width: 100%;
+}
+
+.slide-content {
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.img {
+  width: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.text {
+  width: 60%;
+}
+
+.titulo2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text2 {
+  font-size: 16px;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
 .fun {
   margin: 0;
   padding: 0;
@@ -299,33 +400,6 @@ animation-play-state: paused;
   object-fit: cover; /* ajusta imagem sem distorcer */
 }
 
-.carousel {
-  position: relative;
-  width: px;
-  height: 800px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 50%;
-}
 
 .prev {
   left: 10px;
@@ -338,7 +412,7 @@ animation-play-state: paused;
 .lets{
   margin: 25px 0px;
   padding: 25px 0px;
-  height: 500px;
+  height: 600px;
   display: flex;
   justify-content: center;
 }
@@ -371,10 +445,10 @@ animation-play-state: paused;
 }
 .tex{
   text-align: left;
-  width: 460px;
   font-size: 20px;
   margin: 0px 50px;
   overflow: hidden;
+  width: 600px;
 }
 
 .carrossel-container {
@@ -561,3 +635,184 @@ footer{
   
 }
 
+.tt2{
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 1250px) {
+
+  .contador span {
+    background-color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    min-width: 70px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    }
+
+    .arrumar2{
+      margin-top: 74px;
+      height: 500px;
+    }
+
+    .inverter{
+      height: 500px;
+    }
+    
+
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    width: 90%;
+    text-align: center;
+  }
+
+  .titulo2 {
+    width: auto;
+    font-size: 20px;
+    padding: 16px;
+    margin-top: 0;
+    position: static;
+  }
+
+  .text2 {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+    height: auto;
+  }
+
+  .tex{
+    text-align: left;
+    font-size: 16px;
+    margin: 0px 50px;
+    overflow: hidden;
+    width: 800px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 6px;
+    top: 90%;
+    transform: translateY(-50%);
+  }
+
+  .swiper-button-prev {
+    left: 20%;
+  }
+
+  .swiper-button-next {
+    right: 20%;
+  }
+
+  .cursos {
+    padding: 20px 10px;
+  }
+
+  .slide-content {
+    padding: 16px;
+  }
+
+  .banner {
+    padding: 20px;
+    font-size: large;
+    max-width: 90%;
+  }
+
+  .banner h1 {
+    font-size: 24px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .futuro,
+  .arrumar,
+  .arrumar2 {
+    width: 90% !important;
+  }
+
+  .b4,
+  .b2 {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .colorir2 {
+    width: 90%;
+  }
+
+  .oi {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .f1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+
+  .msm, .msm2 {
+    justify-content: center;
+    padding-left: 0;
+    font-size: large;
+  }
+
+  .mapa {
+    width: 90%;
+    height: auto;
+  }
+
+  .forms,
+  .maps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  .bignumbers,
+  .teste {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .colorir1 {
+    padding: 20px;
+  }
+
+  .fundope {
+    text-align: center;
+  }
+
+  .branco {
+    text-align: center;
+  }
+}
