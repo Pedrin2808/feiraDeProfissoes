@@ -135,6 +135,10 @@ const FAQ = () => {
 };
 
 export default function Index() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   const formSectionRef = useRef(null);
   const scrollToForm = () => {
     if (formSectionRef.current) {
@@ -216,12 +220,27 @@ export default function Index() {
         <div className='temp'>
           <Temporizador dataAlvo ="2025-09-27T00:09:00" />
         </div>
-        <nav>
-          <h1>Inico</h1>
-          <h1>Cursos</h1>
-          <h1>Informações</h1>
-          <h1>Sobre</h1>
-          <button className='b2' onClick={scrollToForm}>Inscreva-se</button>
+        <nav className="navbar">
+          <div className="nav-links desktop">
+            <a className='link2' href="https://www.acaonsfatima.org.br"><h1>Inico</h1></a>
+            <a className='link2' href="https://www.acaonsfatima.org.br/cursos"><h1>Cursos</h1></a>
+            <a className='link2' href="https://www.acaonsfatima.org.br/sobre-nós"><h1>Sobre</h1></a>
+            <button className='b2' onClick={scrollToForm}>Inscreva-se</button>
+          </div>
+
+          <div className="hamburger mobile" onClick={toggleMenu}>
+            ☰
+          </div>
+
+          {isOpen && (
+          <div className="nav-links mobile">
+            <a className='link2' href="https://www.acaonsfatima.org.br">Inico</a>
+            <a className='link2' href="https://www.acaonsfatima.org.br/cursos">Cursos</a>
+            <a className='link2' href="https://www.acaonsfatima.org.br/sobre-nós">Sobre</a>
+            <button className='b2' onClick={scrollToForm}>Inscreva-se</button>
+          </div>
+          )}
+
         </nav>
       </header>
       
@@ -270,7 +289,7 @@ export default function Index() {
                   
                 <div className='arrumar2'>
                   <img className='heig' src="/src/assets/images/feiradep.png" height="150px" alt="FREI" />
-                  <img className='inverter' src="/src/assets/images/bigodeDoFrei.png" height="700px" alt="FREI" />
+                  <img className='inverter' src="/src/assets/images/bigodeDoFrei.png"  alt="FREI" />
                 </div>
               </section>
               
@@ -313,8 +332,8 @@ export default function Index() {
             <section className='cursos'>
               <Swiper
                 modules={[Navigation, Autoplay]}
-                spaceBetween={40} // espaçamento entre os slides
-                slidesPerView={1} // apenas 1 slide por vez
+                spaceBetween={40} 
+                slidesPerView={1}
                 navigation
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
                 loop={true}
@@ -382,8 +401,8 @@ export default function Index() {
               <p className='peq'>AINDA COM DÚVIDAS?</p>
               <p>Fale com a gente agora pelo WhatsApp ou Email e tire todas as suas dúvidas.</p>
               <div className='buts'>
-                <button className='email'>Atendimento via Email</button>
-                <button className='zap'>Atendimento via WhatsApp</button>
+                <a href="mailto:adm@acaonsfatima.org.br"><button className='email'>Atendimento via Email</button></a>
+                <a href="https://wa.me/5511963986252"><button className='zap'>Atendimento via WhatsApp</button></a>
               </div>
             </div>
           </section>
@@ -462,11 +481,11 @@ export default function Index() {
                 <div className='f1'>
                 <img className='ajuste' src="/src/assets/images/logofrei.png" height="150px"/>
                   <div className='redes'>
-                    <img src="/src/assets/images/ytb.png" height="20px"/>
-                    <img src="/src/assets/images/insta.png" height="20px"/>
-                    <img src="/src/assets/images/face.png" height="20px"/>
-                    <img src="/src/assets/images/linked.png" height="20px"/>
-                    <img src="/src/assets/images/zap.png" height="20px"/>
+                    <a href="https://www.youtube.com/@institutosocialnossasenhor3548"><img src="/src/assets/images/ytb.png" height="20px"/></a>
+                    <a href="https://www.instagram.com/institutonsfatima"><img src="/src/assets/images/insta.png" height="20px"/></a>
+                    <a href="https://www.facebook.com/institutonsfatima"><img src="/src/assets/images/face.png" height="20px"/></a>
+                    <a href="https://www.linkedin.com/in/instituto-nossa-senhora-fátima-a7962b137/?originalSubdomain=br"><img src="/src/assets/images/linked.png" height="20px"/></a>
+                    <a href="https://wa.me/5511963986252"><img src="/src/assets/images/zap.png" height="20px"/></a>
                   </div>
                   <div className='branco'>
                     <p>Política de Privacidade e Termos de Uso</p>

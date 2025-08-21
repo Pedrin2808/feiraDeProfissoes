@@ -1,3 +1,7 @@
+*{
+  margin: 0px;
+}
+
 header{
   display: flex;
   justify-content: space-around;
@@ -82,7 +86,41 @@ nav{
 
 .b{
   margin-bottom: 20px;
+  cursor: pointer;
 }
+
+.navbar {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link2 {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.b2 {
+  background-color: #f5b351;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.mobile {
+  display: none;
+}
+
+
 
 .futuro{
   width: 690px;
@@ -113,6 +151,7 @@ nav{
 .menor{
   font-size: 30px;
   color: #F5BA53;
+  margin-bottom: 50px;
 }
 
 .msm{
@@ -120,6 +159,7 @@ nav{
   align-items: center;
   padding-left: 20px;
   font-size: x-large;
+  text-align: start;
 }
 .msm2{
   display: flex;
@@ -133,6 +173,7 @@ nav{
   border-radius: 10px;
   width: 540px;
   margin: 3px;
+  margin-bottom: 36px;
 }
 
 .heig{
@@ -168,7 +209,11 @@ button{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 14px;
   margin-left: 47px;
-}
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+
 .b3{
   margin-left: 47px;
 }
@@ -177,7 +222,7 @@ button{
   display: flex;
   gap: 15px;
   justify-content: space-around;
-///
+
   padding-top: 16px;
 }
 .card{
@@ -192,7 +237,7 @@ button{
   display: flex;
   justify-content: space-around;
   text-align: center;
-///
+
 }
 
 .inverter{
@@ -202,6 +247,7 @@ button{
       transform: scaleX(-1);
       border: solid 3px #9DC3F6BD;
       border-radius: 10px;
+      height: 700px;
 }
 
 .flex{
@@ -505,9 +551,12 @@ border-radius: 8px;
 }
 .peq{
 font-size: 10px;
-font-weight: bolder;
+font-weight: bold;
+margin-bottom: 20px;
 }
 .email{
+  margin-top: 10px;
+  width: 250px;
 background-color:#6faace ;
 padding: 10px ;
 border-radius: 5px;
@@ -516,6 +565,7 @@ border-radius: 5px;
 background-color:#7eb07f;
 padding: 10px ;
 border-radius: 5px;
+width: 250px;
 }
 
 .buts{
@@ -523,7 +573,6 @@ display: flex;
 flex-direction: column;
 gap: 10px;
 }
-
 
 .maps{
   display: flex;
@@ -635,8 +684,36 @@ footer{
   text-decoration: none;
 }
 
+.link2{
+  color: #000;
+  text-decoration: none;
+}
 
-@media (max-width: 1250px) {
+
+
+@media (max-width: 1200px) {
+
+  .desktop {
+    display: none;
+  }
+
+  .hamburger {
+    font-size: 26px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .link2{
+    font-size: 12px;
+    border-bottom: solid 3px black;
+    margin-top: 5px;
+  }
 
   header{
     display: flex;
@@ -713,12 +790,25 @@ footer{
 
     .inverter{
       height: 500px;
+      margin-top: 100px;
+    }
+
+    .heig{
+      margin-left: 50px;
+    }
+
+    .maior{
+      font-size: 26px;
     }
     
 
   .flex {
     flex-direction: column;
     align-items: center;
+  }
+
+  .inverter{
+    height: 400px;
   }
 
   .img {
@@ -848,8 +938,7 @@ footer{
   }
 
   .msm, .msm2 {
-    justify-content: center;
-    padding-left: 0;
+    padding: 10px;
     font-size: large;
   }
 
@@ -889,10 +978,16 @@ footer{
     flex-direction: column;
     align-items: center;
     background-color: #000;
+    margin: 0px;
+    border-bottom: 5px solid rgb(0, 0, 0);
   }
 
   footer{
-    background-color:white;
+    background-color:rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 0px;
   }
 
   .branco {
@@ -902,4 +997,5 @@ footer{
     border-radius: 20px;
     margin-left: 0px;
   }
+
 }
