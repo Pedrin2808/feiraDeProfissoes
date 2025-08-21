@@ -75,12 +75,6 @@ const Temporizador = ({ dataAlvo }) => {
   );
 };
 
-let images = [
-  "/src/assets/images/adm2.png",
-  "/src/assets/images/info2.png",
-  "/src/assets/images/cv2.png"
-];
-
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -189,7 +183,6 @@ export default function Index() {
     },
   ];
 
-  //
 
   const [nome , setNome] = useState ()
   const [telefone , setTelefone] = useState ()
@@ -201,15 +194,6 @@ export default function Index() {
   const [aluno , setAluno] = useState ()
   const [sabendo , setSabendo] = useState ()
 
-  const [currentIndex, setCurrentIndex] = useState(0); //animação infinita
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length); //botao direita
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)//botao esquerda
-  }
 
   return (
     <div className='body'>
@@ -222,7 +206,7 @@ export default function Index() {
         </div>
         <nav className="navbar">
           <div className="nav-links desktop">
-            <a className='link2' href="https://www.acaonsfatima.org.br"><h1>Inico</h1></a>
+            <a className='link2' href="https://www.acaonsfatima.org.br"><h1>Inicio</h1></a>
             <a className='link2' href="https://www.acaonsfatima.org.br/cursos"><h1>Cursos</h1></a>
             <a className='link2' href="https://www.acaonsfatima.org.br/sobre-nós"><h1>Sobre</h1></a>
             <button className='b2' onClick={scrollToForm}>Inscreva-se</button>
@@ -269,18 +253,19 @@ export default function Index() {
 
                   <div className='arrumar'>
                     <div className='diminui'>
-                    <p className='corw'>
-                    Vivencie na prática!</p>
-                    <br></br>
-                    <br></br>
-                    <p className='negativo'>
-                    Na nossa feira, alunos de diferentes áreas vão
-                    apresentar seus cursos de forma interativa,
-                    mostrando projetos, experiências reais e tudo
-                    que você precisa saber para escolher seu Futuro
-                    com mais confiança.
-                    </p>
+                      <p className='corw'>
+                      Vivencie na prática!</p>
+                      <br></br>
+                      <br></br>
+                      <p className='negativo'>
+                      Na nossa feira, alunos de diferentes áreas vão
+                      apresentar seus cursos de forma interativa,
+                      mostrando projetos, experiências reais e tudo
+                      que você precisa saber para escolher seu Futuro
+                      com mais confiança.
+                      </p>
                     </div>
+
                     <div className='meio'>
                       <button onClick={scrollToForm} className='b'>Inscreva-se</button>
                     </div>
@@ -355,105 +340,114 @@ export default function Index() {
               </Swiper>
             </section>
 
-          <section className='gradiente'>
-          <h1 className='tt'>Conheça Nossa História</h1>
-          <div className='conhecahist'>
-            <div className='freitext'>
-              <p>
-                Fundado em 1971, pelo Frei Xavier (como é carinhosamente conhecido), o Instituto Social Nossa Senhora de Fátima é uma instituição sem fins lucrativos, localizado na zona sul de São Paulo, tem sido um farol para o desenvolvimento humano e profissional de jovens a partir de 13 anos. Com duas unidades de ensino, o instituto dedica-se a capacitá-los por meio da oferta de cursos técnicos, de qualificação e livres, proporcionando oportunidades valiosas para o crescimento pessoal e profissional do ser humano. Sua trajetória é marcada pelo compromisso contínuo com impacto positivo na comunidade, a educação e o crescimento sólido da juventude.
-              </p>
-            </div>
-            <div className='column'>
-              <img className='frei1' src='/src/assets/images/frei1.png' height='250px'/>
-              <img className='frei2' src='/src/assets/images/frei2.png' height='250px'/>
-            </div>
-          </div>
-          </section>
-
-          <h1 className='tt'>Parceiros</h1>
-          <section className="carrossel-container">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={4}
-            navigation
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop={true}
-            breakpoints={{
-              320: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
-            }}
-          >
-            {logos.map((logo, index) => (
-              <SwiperSlide key={index}>
-                <img src={logo.src} alt={logo.alt} className="logo-parceiro"/>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          </section>
-          <h1 className="tt">Dúvidas Frequentes</h1>
-          <section className="faq-section">
-            <div>
-              <FAQ />
-            </div>
-            <div className='aindaCdV'>
-              <p className='peq'>AINDA COM DÚVIDAS?</p>
-              <p>Fale com a gente agora pelo WhatsApp ou Email e tire todas as suas dúvidas.</p>
-              <div className='buts'>
-                <a href="mailto:adm@acaonsfatima.org.br"><button className='email'>Atendimento via Email</button></a>
-                <a href="https://wa.me/5511963986252"><button className='zap'>Atendimento via WhatsApp</button></a>
+            <section className='gradiente'>
+            <h1 className='tt'>Conheça Nossa História</h1>
+            <div className='conhecahist'>
+              <div className='freitext'>
+                <p>
+                  Fundado em 1971, pelo Frei Xavier (como é carinhosamente conhecido), o Instituto Social Nossa Senhora de Fátima é uma instituição sem fins lucrativos, localizado na zona sul de São Paulo, tem sido um farol para o desenvolvimento humano e profissional de jovens a partir de 13 anos. Com duas unidades de ensino, o instituto dedica-se a capacitá-los por meio da oferta de cursos técnicos, de qualificação e livres, proporcionando oportunidades valiosas para o crescimento pessoal e profissional do ser humano. Sua trajetória é marcada pelo compromisso contínuo com impacto positivo na comunidade, a educação e o crescimento sólido da juventude.
+                </p>
+              </div>
+              <div className='column'>
+                <img className='frei1' src='/src/assets/images/frei1.png' height='250px'/>
+                <img className='frei2' src='/src/assets/images/frei2.png' height='250px'/>
               </div>
             </div>
-          </section>
-          <section id='map' >
-          <h1 className="tt">Local do Evento</h1>
-            <section className = "maps">
-              <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.877780335286!2d-46.710505823997686!3d-23.68032836597489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755524751181!5m2!1spt-BR!2sbr" width="90%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </section>
-          </section>
-          <h1 className='tt'>Formulário</h1>
+
+            <h1 className='tt'>Parceiros</h1>
+
+            <section className="carrossel-container">
+              <Swiper
+                modules={[Navigation, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={4}
+                navigation
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                loop={true}
+                breakpoints={{
+                320: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+                }}
+                >
+                {logos.map((logo, index) => (
+                <SwiperSlide key={index}>
+                  <img src={logo.src} alt={logo.alt} className="logo-parceiro"/>
+                </SwiperSlide>
+                ))}
+              </Swiper>
+            </section>
+
+            <h1 className="tt">Dúvidas Frequentes</h1>
+
+            <section className="faq-section">
+              <div>
+                <FAQ />
+              </div>
+
+              <div className='aindaCdV'>
+                <p className='peq'>AINDA COM DÚVIDAS?</p>
+                <p>Fale com a gente agora pelo WhatsApp ou Email e tire todas as suas dúvidas.</p>
+                <div className='buts'>
+                  <a href="mailto:adm@acaonsfatima.org.br"><button className='email'>Atendimento via Email</button></a>
+                  <a href="https://wa.me/5511963986252"><button className='zap'>Atendimento via WhatsApp</button></a>
+                </div>
+              </div>
+            </section>
+
+            <section id='map' >
+              <h1 className="tt">Local do Evento</h1>
+                <div className = "maps">
+                  <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.877780335286!2d-46.710505823997686!3d-23.68032836597489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755524751181!5m2!1spt-BR!2sbr" width="90%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+
+            <h1 className='tt'>Formulário</h1>
+
             <section ref={formSectionRef} id="forms" className='forms'>
-            <div className='colorir1'>
+              <div className='colorir1'>
                 <div className='colorir2'>
                   <div className='oi'>
-                  <div className='vertical1'>
-                    <label>Nome</label>
-                    <input value={nome} onChange = {(e)=> setNome(e.target.value)}/>
-                    <label>Telefone</label>
-                    <input value={telefone} onChange = {(e)=> setTelefone(e.target.value)}/>
-                    <label>Email</label>
-                    <input value={email} onChange = {(e)=> setEmail(e.target.value)}/>
-                    <label>Previsão de chegada à feira</label>
-                    <input value={previsao} onChange = {(e)=> setPrevisao(e.target.value)}/>
-                  </div>
-                  <div className='vertical1'>
-                    <label>CPF</label>
-                    <input value={cpf} onChange = {(e)=> setCpf(e.target.value)}/>
-                    <label>CEP</label>
-                    <input value={cep} onChange = {(e)=> setCep(e.target.value)}/>
-                    <label  htmlFor='input-curso'>Interesse em algum curso</label>
-                    <input type="text"
-                    id="input-curso" 
-                    list="lista-curso" value={interesse} onChange = {(e)=> setInteresse(e.target.value)}/>
+                    <div className='vertical1'>
+                      <label>Nome</label>
+                      <input value={nome} onChange = {(e)=> setNome(e.target.value)}/>
+                      <label>Telefone</label>
+                      <input value={telefone} onChange = {(e)=> setTelefone(e.target.value)}/>
+                      <label>Email</label>
+                      <input value={email} onChange = {(e)=> setEmail(e.target.value)}/>
+                      <label>Previsão de chegada à feira</label>
+                      <input value={previsao} onChange = {(e)=> setPrevisao(e.target.value)}/>
+                    </div>
 
-          <datalist id="lista-curso"> 
-            {curso.map((curso, index) => (
-              <option key={index} value={curso} />
-            ))}
-          </datalist>
-                    <label htmlFor='input-aluno'>ja foi aluno?</label>
-                    <input type="text"
-                    id="input-aluno" 
-                    list="lista-aluno" value={aluno} onChange = {(e)=> setAluno(e.target.value)}/>
+                    <div className='vertical1'>
+                      <label>CPF</label>
+                      <input value={cpf} onChange = {(e)=> setCpf(e.target.value)}/>
+                      <label>CEP</label>
+                      <input value={cep} onChange = {(e)=> setCep(e.target.value)}/>
+                      <label  htmlFor='input-curso'>Interesse em algum curso</label>
+                      <input type="text"
+                      id="input-curso" 
+                      list="lista-curso" value={interesse} onChange = {(e)=> setInteresse(e.target.value)}/>
 
-          <datalist id="lista-aluno"> 
-            {alunoo.map((aluno, index) => (
-              <option key={index} value={aluno} />
-            ))}
-          </datalist>
+                      <datalist id="lista-curso"> 
+                        {curso.map((curso, index) => (
+                          <option key={index} value={curso} />
+                        ))}
+                      </datalist>
+                      <label htmlFor='input-aluno'>ja foi aluno?</label>
+                      <input type="text"
+                        id="input-aluno" 
+                        list="lista-aluno" value={aluno} onChange = {(e)=> setAluno(e.target.value)}/>
+
+                      <datalist id="lista-aluno"> 
+                      {alunoo.map((aluno, index) => (
+                      <option key={index} value={aluno} />
+                      ))}
+                      </datalist>
+                    </div>
                   </div>
-                  </div>
+
                   <div className='horizonte'>
                     <label htmlFor='input-sabendo'>Como ficou sabendo da feira?</label>
                     <input 
@@ -461,40 +455,42 @@ export default function Index() {
                     type="text"
                     id="input-sabendo" 
                     list="lista-sabendo" value={sabendo} onChange = {(e)=> setSabendo(e.target.value)}/>
+                    <datalist id="lista-sabendo"> 
+                    {sabendoo.map((sabendo, index) => (
+                    <option key={index} value={sabendo} />
+                    ))}
+                    </datalist>         
+                  </div>
 
-          <datalist id="lista-sabendo"> 
-            {sabendoo.map((sabendo, index) => (
-              <option key={index} value={sabendo} />
-            ))}
-          </datalist>         
-              </div>
                   <div className='vai'>
-                  <button className='b4'>Confirmar Inscrição</button>
-                  </div>
-                </div>
-            </div>
-            </section>
-            </main>
-
-            <footer>
-              <div className='fundope'>
-                <div className='f1'>
-                <img className='ajuste' src="/src/assets/images/logofrei.png" height="150px"/>
-                  <div className='redes'>
-                    <a href="https://www.youtube.com/@institutosocialnossasenhor3548"><img src="/src/assets/images/ytb.png" height="20px"/></a>
-                    <a href="https://www.instagram.com/institutonsfatima"><img src="/src/assets/images/insta.png" height="20px"/></a>
-                    <a href="https://www.facebook.com/institutonsfatima"><img src="/src/assets/images/face.png" height="20px"/></a>
-                    <a href="https://www.linkedin.com/in/instituto-nossa-senhora-fátima-a7962b137/?originalSubdomain=br"><img src="/src/assets/images/linked.png" height="20px"/></a>
-                    <a href="https://wa.me/5511963986252"><img src="/src/assets/images/zap.png" height="20px"/></a>
-                  </div>
-                  <div className='branco'>
-                    <p>Política de Privacidade e Termos de Uso</p>
-                    <p>Feito Carinhosamente Por: Pedro H, Pedro L, André, José C., Gustavo L, Gustavo P.  </p>
-                    <Link className='link1' to ={'/login'}><p>Login</p></Link>
+                    <button className='b4'>Confirmar Inscrição</button>
                   </div>
                 </div>
               </div>
-            </footer>
-  </div>
+            </section>
+          </main>
+
+          <footer>
+            <div className='fundope'>
+              <div className='f1'>
+                <img className='ajuste' src="/src/assets/images/logofrei.png" height="150px"/>
+                <div className='redes'>
+                  <a href="https://www.youtube.com/@institutosocialnossasenhor3548"><img src="/src/assets/images/ytb.png" height="20px"/></a>
+                  <a href="https://www.instagram.com/institutonsfatima"><img src="/src/assets/images/insta.png" height="20px"/></a>
+                  <a href="https://www.facebook.com/institutonsfatima"><img src="/src/assets/images/face.png" height="20px"/></a>
+                  <a href="https://www.linkedin.com/in/instituto-nossa-senhora-fátima-a7962b137/?originalSubdomain=br"><img src="/src/assets/images/linked.png" height="20px"/></a>
+                  <a href="https://wa.me/5511963986252"><img src="/src/assets/images/zap.png" height="20px"/></a>
+                </div>
+                <div className='branco'>
+                  <p>Política de Privacidade e Termos de Uso</p>
+                  <p>Feito Carinhosamente Por: Pedro H, Pedro L, André, José C., Gustavo L, Gustavo P.  </p>
+                  <Link className='link1' to ={'/login'}><p>Login</p></Link>
+                </div>
+              </div>
+            </div>
+
+        </footer>
+
+    </div> 
   );
 }
