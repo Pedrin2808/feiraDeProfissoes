@@ -156,7 +156,7 @@ export default function Index() {
     {
       titulo: 'Informática',
       texto: 'Informática: domine a tecnologia e o mundo digital!',
-      imagem: '/src/assets/images/info.png',
+      imagem: '/src/assets/images/info1.png',
       alt: 'ImgInformática',
     },
     {
@@ -337,13 +337,15 @@ export default function Index() {
 
           <section className='gradiente'>
           <h1 className='tt'>Conheça Nossa História</h1>
-          <div className='lets'>
-            <div className='tex'>
-                <p>Fundado em 1971, pelo Frei Xavier (como é carinhosamente conhecido), o Instituto Social Nossa Senhora de Fátima é uma instituição sem fins lucrativos, localizado na zona sul de São Paulo, tem sido um farol para o desenvolvimento humano e profissional de jovens a partir de 13 anos. Com duas unidades de ensino, o instituto dedica-se a capacitá-los por meio da oferta de cursos técnicos, de qualificação e livres, proporcionando oportunidades valiosas para o crescimento pessoal e profissional do ser humano. Sua trajetória é marcada pelo compromisso contínuo com impacto positivo na comunidade, a educação e o crescimento sólido da juventude.​</p>
+          <div className='conhecahist'>
+            <div className='freitext'>
+              <p>
+                Fundado em 1971, pelo Frei Xavier (como é carinhosamente conhecido), o Instituto Social Nossa Senhora de Fátima é uma instituição sem fins lucrativos, localizado na zona sul de São Paulo, tem sido um farol para o desenvolvimento humano e profissional de jovens a partir de 13 anos. Com duas unidades de ensino, o instituto dedica-se a capacitá-los por meio da oferta de cursos técnicos, de qualificação e livres, proporcionando oportunidades valiosas para o crescimento pessoal e profissional do ser humano. Sua trajetória é marcada pelo compromisso contínuo com impacto positivo na comunidade, a educação e o crescimento sólido da juventude.
+              </p>
             </div>
-            <div className='imagens'>
-                <img className='frei1' src='/src/assets/images/frei1.png' alt = 'frei1'/>
-                <img className='frei2' src='/src/assets/images/frei2.png' alt = 'frei2'/>
+            <div className='column'>
+              <img className='frei1' src='/src/assets/images/frei1.png' height='250px'/>
+              <img className='frei2' src='/src/assets/images/frei2.png' height='250px'/>
             </div>
           </div>
           </section>
@@ -434,7 +436,9 @@ export default function Index() {
                   </div>
                   <div className='horizonte'>
                     <label htmlFor='input-sabendo'>Como ficou sabendo da feira?</label>
-                    <input type="text"
+                    <input 
+                    className='input-sabendo'
+                    type="text"
                     id="input-sabendo" 
                     list="lista-sabendo" value={sabendo} onChange = {(e)=> setSabendo(e.target.value)}/>
 
@@ -466,7 +470,7 @@ export default function Index() {
                   <div className='branco'>
                     <p>Política de Privacidade e Termos de Uso</p>
                     <p>Feito Carinhosamente Por: Pedro H, Pedro L, André, José C., Gustavo L, Gustavo P.  </p>
-                    <Link to ={'/loginoculto'}><p>Login</p></Link>
+                    <Link className='link1' to ={'/login'}><p>Login</p></Link>
                   </div>
                 </div>
               </div>

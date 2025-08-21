@@ -142,7 +142,6 @@ nav{
 }
 
 .arrumar2{
-  border: 3px solid #9DC3F6BD;
   border-radius: 10px;
   width: 468px;
   max-width: 32.5%;
@@ -197,12 +196,12 @@ button{
 }
 
 .inverter{
-  
       -moz-transform: scaleX(-1);
       -o-transform: scaleX(-1);
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
-  
+      border: solid 3px #9DC3F6BD;
+      border-radius: 10px;
 }
 
 .flex{
@@ -220,6 +219,7 @@ button{
 }
 .img{
   border-radius: 20px;
+  margin-left: 180px;
 }
 .titulo2{
   background-color: #f5ba53;
@@ -409,13 +409,6 @@ animation-play-state: paused;
   right: 10px;
 }
 
-.lets{
-  margin: 25px 0px;
-  padding: 25px 0px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-}
 
 .gradiente{
   padding-top: 25px;
@@ -423,32 +416,28 @@ animation-play-state: paused;
   background: linear-gradient(0deg, #ffffff 0%, #9DC3F6BD 10.31%, #9DC3F6BD 50%,#9DC3F6BD 89.47% , #ffffff 100%);
 }
 
-
-.frei1{
-  height: 300px;
+.conhecahist{
+  display:flex;
+  justify-content: space-around;
+  height: 600px;
+}
+ 
+.freitext{
+  width: 40%;
 }
 
 .frei2{
-    height: 220px;
-    width: 300px;
-    position: absolute;
+  position: absolute;
     display: flex;
-    flex-direction: column;
-    margin-top: 230px;
-    margin-left: 130px;
+    margin-top: 200px;
+    margin-left: 69px;
 }
 
-.imagens{
+.column{
   display: flex;
+  position: relative;
+  margin-left: -200px;
   flex-direction: column;
-  margin: 0px 230px;
-}
-.tex{
-  text-align: left;
-  font-size: 20px;
-  margin: 0px 50px;
-  overflow: hidden;
-  width: 600px;
 }
 
 .carrossel-container {
@@ -641,8 +630,69 @@ footer{
   justify-content: center;
 }
 
+.link1{
+  color: #ffffff;
+  text-decoration: none;
+}
+
 
 @media (max-width: 1250px) {
+
+  header{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    height: 170px;
+  }
+
+  .conhecahist{
+    display:flex;
+    justify-content: space-around;
+    height: 600px;
+  }
+   
+  .freitext{
+    width: 40%;
+  }
+  
+  .frei2{
+      display: flex;
+      margin-top: 290px;
+      margin-left: 135px;
+  }
+  
+  .column{
+    display: flex;
+    align-items: center;
+    margin-left: -200px;
+    
+    flex-direction: column;
+  }
+  
+  .temporizador {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4px;
+  border-radius: 12px;
+  margin: auto;
+  }
+  
+  .temporizador h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+  }
+  
+  .contador {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  }
+  
+  
 
   .contador span {
     background-color: #ffffff;
@@ -703,6 +753,31 @@ footer{
     margin: 0px 50px;
     overflow: hidden;
     width: 800px;
+  }
+
+  .conhecahist{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 600px;
+  }
+
+  .gradiente{
+    height: 1200px;
+  }
+   
+  .freitext{
+    width: 40%;
+    margin-bottom: 50px;
+  }
+
+
+  
+  .column{
+    display: flex;
+    margin-left: -200px;
+    flex-direction: row;
   }
 
   .swiper-button-next,
@@ -810,9 +885,21 @@ footer{
 
   .fundope {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+  }
+
+  footer{
+    background-color:white;
   }
 
   .branco {
     text-align: center;
+  }
+  .img{
+    border-radius: 20px;
+    margin-left: 0px;
   }
 }
