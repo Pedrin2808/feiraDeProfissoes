@@ -218,7 +218,7 @@ export default function Index() {
 
           {isOpen && (
           <div className="nav-links mobile">
-            <a className='link2' href="https://www.acaonsfatima.org.br">Inico</a>
+            <a className='link2' href="https://www.acaonsfatima.org.br">Inicio</a>
             <a className='link2' href="https://www.acaonsfatima.org.br/cursos">Cursos</a>
             <a className='link2' href="https://www.acaonsfatima.org.br/sobre-nós">Sobre</a>
             <button className='b2' onClick={scrollToForm}>Inscreva-se</button>

@@ -3,12 +3,20 @@
 }
 
 header{
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   height: 110px;
+  background-color: white;
+  width: 100%;
+  z-index: 3;
+}
+
+main{
+  padding-top:110px ;
 }
 
 .temporizador {
@@ -904,6 +912,10 @@ footer{
     font-size: 24px;
   }
 
+  main{
+    padding-top: 170px;
+  }
+
   .banner p {
     font-size: 16px;
   }
@@ -999,4 +1011,48 @@ footer{
     margin-left: 0px;
   }
 
+}
+
+@media (max-width: 600px) {
+  .arrumar2{
+    display: none;
+  }
+  .menor{
+    margin-left: 00px;
+  }
+  .maior{
+    margin-left: 0px;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  .gradiente1{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.412), rgba(255, 255, 255, 0.6)),
+    url(/src/assets/images/frei.png);
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 1350px;
+  }
+
+  .forms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+  }
+
+  .colorir1{
+      visibility: hidden;
+  }
+
+  .colorir2{
+      visibility: visible;
+      border: 0px solid;
+      margin-left: 55px;
+  }
+  .horizonte input{
+    width: 180px;
+    margin-right: 8px;
+  }
 }
