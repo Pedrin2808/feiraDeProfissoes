@@ -1,0 +1,11 @@
+import formulario from './controller/formularioController.js'
+import login from './controller/loginController.js'
+import vincular from './controller/vincularController.js'
+
+
+
+export function adicionarRotas(api){
+   api.use(formulario);
+   api.use(login);
+   api.use(vincular);
+}

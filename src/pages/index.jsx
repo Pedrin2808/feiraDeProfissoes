@@ -25,9 +25,6 @@ const logos = [
   { src: '/src/assets/images/cidadesp.png', alt: 'Prefeitura' },
 ];
 
-
-
-
 const Temporizador = ({ dataAlvo }) => {
   const [tempoRestante, setTempoRestante] = useState({});
   const [chegou, setChegou] = useState(false);
@@ -184,16 +181,76 @@ export default function Index() {
   ];
 
 
-  const [nome , setNome] = useState ()
-  const [telefone , setTelefone] = useState ()
-  const [email , setEmail] = useState ()
-  const [previsao , setPrevisao] = useState ()
-  const [cpf , setCpf] = useState ()
-  const [cep , setCep] = useState ()
-  const [interesse , setInteresse] = useState ()
-  const [aluno , setAluno] = useState ()
-  const [sabendo , setSabendo] = useState ()
+  const [nome , setNome] = useState ("")
+  const [telefone , setTelefone] = useState ("")
+  const [email , setEmail] = useState ("")
+  const [previsao , setPrevisao] = useState ("")
+  const [cpf , setCpf] = useState ("")
+  const [cep , setCep] = useState ("")
+  const [interesse , setInteresse] = useState ("")
+  const [aluno , setAluno] = useState ("")
+  const [sabendo , setSabendo] = useState ("")
 
+  function formatarCPF(value) {
+    return value
+      .replace(/\D/g, '') // remove tudo que não for número
+      .replace(/(\d{3})(\d)/, '$1.$2') // coloca ponto entre 3º e 4º dígito
+      .replace(/(\d{3})(\d)/, '$1.$2') // segundo ponto
+      .replace(/(\d{3})(\d{1,2})$/, '$1-$2') // coloca hífen antes dos 2 últimos dígitos
+      .slice(0, 14); // limita tamanho
+  }
+  
+    function formatarCEP(value) {
+    return value
+      .replace(/\D/g, '')
+      .replace(/(\d{5})(\d)/, '$1-$2') // 12345-678
+      .slice(0, 9); // limita tamanho
+  }
+  
+    function formatarTelefone(value) {
+    return value
+      .replace(/\D/g, '')
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2')
+      .slice(0, 15); // limita tamanho
+  }
+  
+  
+    async function Formulario() {
+      const dados = {
+        nome,
+        telefone,
+        email,
+        previsao,
+        cpf,
+        cep,
+        interesse,
+        aluno,
+        sabendo
+      };
+  
+      const response = await fetch("http://localhost:5010/formulario", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+      });
+  
+      if (response.ok) {
+        alert("Inscrição enviada com sucesso!");
+        setNome("");
+        setTelefone("");
+        setEmail("");
+        setPrevisao("");
+        setCpf("");
+        setCep("");
+        setInteresse("");
+        setAluno("");
+        setSabendo("");
+      } else {
+        alert("Erro ao enviar inscrição.");
+      }
+    }
+  
 
   return (
     <div className='body'>
@@ -278,32 +335,32 @@ export default function Index() {
                 </div>
               </section>
               
-              <section class="bignumbers">
-                <div class="card">
+              <section className="bignumbers">
+                <div className="card">
                   <img src="/src/assets/images/bigN1.png" height= '90px'alt="Ícone alfabetização" />
                   <span>+3mil</span>
                   <p>Educadores Capacitados</p>
                 </div>
 
-                <div class="card">
+                <div className="card">
                   <img src="/src/assets/images/bigN2.png" height= '90px'alt="Ícone professor" />
                   <span>+50mil</span>
                   <p>Alunos Formados</p>
                 </div>
 
-                <div class="card">
+                <div className="card">
                   <img src="/src/assets/images/bigN3.png" height= '90px' alt="Ícone parceria" />
                   <span>+9mil</span>
                   <p>Parcerias com Empresas</p>
                 </div>
 
-                <div class="card">
+                <div className="card">
                   <img src="/src/assets/images/bigN4.png" height= '90px' alt="Ícone prédio" />
                   <span>+3mil</span>
                   <p>Instituições Atendidas</p>
                 </div>
 
-                <div class="card">
+                <div className="card">
                   <img src="/src/assets/images/bigN5.png" height= '90px' alt="Ícone pessoas" />
                   <span>+12mil</span>
                   <p>Jovens Atendidos por DIA</p>
@@ -406,64 +463,65 @@ export default function Index() {
             <h1 className='tt'>Formulário</h1>
 
             <section ref={formSectionRef} id="forms" className='forms'>
-              <div className='colorir1'>
-                <div className='colorir2'>
-                  <div className='oi'>
-                    <div className='vertical1'>
-                      <label>Nome</label>
-                      <input value={nome} onChange = {(e)=> setNome(e.target.value)}/>
-                      <label>Telefone</label>
-                      <input value={telefone} onChange = {(e)=> setTelefone(e.target.value)}/>
-                      <label>Email</label>
-                      <input value={email} onChange = {(e)=> setEmail(e.target.value)}/>
-                      <label>Previsão de chegada à feira</label>
-                      <input value={previsao} onChange = {(e)=> setPrevisao(e.target.value)}/>
-                    </div>
+          <div className='colorir1'>
+            <div className='colorir2'>
+              <div className='oi'>
+                <div className='vertical1'>
+                  <label>Nome</label>
+                  <input id='input-nome' value={nome} onChange={(e) => setNome(e.target.value)} />
+                  <label>Telefone</label>
+                  <input id='input-telefone' value={telefone} onChange={(e) => setTelefone(formatarTelefone(e.target.value))} />
+                  <label>Email</label>
+                  <input id='input-email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <label>Previsão de chegada à feira</label>
+                  <input id='input-previ' value={previsao} onChange={(e) => setPrevisao(e.target.value)} />
+                </div>
 
-                    <div className='vertical1'>
-                      <label>CPF</label>
-                      <input value={cpf} onChange = {(e)=> setCpf(e.target.value)}/>
-                      <label>CEP</label>
-                      <input value={cep} onChange = {(e)=> setCep(e.target.value)}/>
-                      <label  htmlFor='input-curso'>Interesse em algum curso</label>
-                      <input type="text"
-                      id="input-curso" 
-                      list="lista-curso" value={interesse} onChange = {(e)=> setInteresse(e.target.value)}/>
+                <div className='vertical1'>
+                  <label>CPF</label>
+                  <input id='input-cpf' value={cpf} onChange={(e) => setCpf(formatarCPF(e.target.value))} />
+                  <label>CEP</label>
+                  <input id='input-cep' value={cep} onChange={(e) => setCep(formatarCEP(e.target.value))} />
 
-                      <datalist id="lista-curso"> 
-                        {curso.map((curso, index) => (
-                          <option key={index} value={curso} />
-                        ))}
-                      </datalist>
-                      <label htmlFor='input-aluno'>ja foi aluno?</label>
-                      <input type="text"
-                        id="input-aluno" 
-                        list="lista-aluno" value={aluno} onChange = {(e)=> setAluno(e.target.value)}/>
+                  <label htmlFor='input-curso'>Interesse em algum curso</label>
+                  <input type="text"
+                    id="input-curso"
+                    list="lista-curso" value={interesse} onChange={(e) => setInteresse(e.target.value)} />
 
-                      <datalist id="lista-aluno"> 
-                      {alunoo.map((aluno, index) => (
-                      <option key={index} value={aluno} />
-                      ))}
-                      </datalist>
-                    </div>
-                  </div>
-
-                  <div className='horizonte'>
-                    <label htmlFor='input-sabendo'>Como ficou sabendo da feira?</label>
-                    <input 
-                    className='input-sabendo'
-                    type="text"
-                    id="input-sabendo" 
-                    list="lista-sabendo" value={sabendo} onChange = {(e)=> setSabendo(e.target.value)}/>
-                    <datalist id="lista-sabendo"> 
-                    {sabendoo.map((sabendo, index) => (
-                    <option key={index} value={sabendo} />
+                  <datalist id="lista-curso">
+                    {curso.map((curso, index) => (
+                      <option key={index} value={curso} />
                     ))}
-                    </datalist>         
-                  </div>
+                  </datalist>
+                  <label htmlFor='input-aluno'>ja foi aluno?</label>
+                  <input type="text"
+                    id="input-aluno"
+                    list="lista-aluno" value={aluno} onChange={(e) => setAluno(e.target.value)} />
+
+                  <datalist id="lista-aluno">
+                    {alunoo.map((aluno, index) => (
+                      <option key={index} value={aluno} />
+                    ))}
+                  </datalist>
+                </div>
+              </div>
+
+              <div className='horizonte'>
+                <label htmlFor='input-sabendo'>Como ficou sabendo da feira?</label>
+                <input
+                  className='input-sabendo'
+                  type="text"
+                  id="input-sabendo"
+                  list="lista-sabendo" value={sabendo} onChange={(e) => setSabendo(e.target.value)} />
+                <datalist id="lista-sabendo">
+                  {sabendoo.map((sabendo, index) => (
+                    <option key={index} value={sabendo} />
+                  ))}
+                </datalist>
+              </div>
 
                   <div className='vai'>
-                    <button className='b4'>Confirmar Inscrição</button>
+                    <button className='b4'  onClick={Formulario} >Confirmar Inscrição</button>
                   </div>
                 </div>
               </div>
@@ -483,8 +541,7 @@ export default function Index() {
                 </div>
                 <div className='branco'>
                   <p>Política de Privacidade e Termos de Uso</p>
-                  <p>Feito Carinhosamente Por: Pedro H, Pedro L, André, José C., Gustavo L, Gustavo P.  </p>
-                  <Link className='link1' to ={'/login'}><p>Login</p></Link>
+                  <p>Feito Carinhosamente Por: André, José C.,Pedro H, Pedro L, Gustavo L, Gustavo P.  </p> <Link className='link1' to ={'/login'}><p>Login</p></Link>
                 </div>
               </div>
             </div>
