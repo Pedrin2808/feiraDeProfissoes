@@ -460,9 +460,9 @@ export default function Index() {
                 </div>
             </section>
 
-            <h1 className='tt'>Formulário</h1>
+            <h1  ref={formSectionRef} className='tt'>Formulário</h1>
 
-            <section ref={formSectionRef} id="forms" className='forms'>
+            <section   id="forms" className='forms'>
           <div className='colorir1'>
             <div className='colorir2'>
               <div className='oi'>

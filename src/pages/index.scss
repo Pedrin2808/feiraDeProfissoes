@@ -256,7 +256,7 @@ button{
       transform: scaleX(-1);
       border: solid 3px #9DC3F6BD;
       border-radius: 10px;
-      height: 700px;
+      height: 650px;
 }
 
 .flex{
@@ -318,6 +318,7 @@ animation-play-state: paused;
 }
 
 .tt{
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   padding: 20px 0px;
