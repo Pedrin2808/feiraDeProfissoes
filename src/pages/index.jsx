@@ -459,8 +459,9 @@ export default function Index() {
                   <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.877780335286!2d-46.710505823997686!3d-23.68032836597489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755524751181!5m2!1spt-BR!2sbr" width="90%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
+            <h6 ref={formSectionRef} ></h6>
 
-            <h1  ref={formSectionRef} className='tt'>Formulário</h1>
+            <h1  className='tt'>Formulário</h1>
 
             <section   id="forms" className='forms'>
           <div className='colorir1'>
