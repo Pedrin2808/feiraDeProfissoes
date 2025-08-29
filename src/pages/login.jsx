@@ -10,6 +10,33 @@ export default function login(){
     const navigate = useNavigate();
 
     async function verificarLogin() {
+        if(!usuario && !senha) {
+            setMsg("Usuário e senha são obrigatórios");
+            return;
+        }
+        if(!usuario) {
+            setMsg("Usuário é obrigatório");
+            return;
+        }if(!senha) {
+            setMsg("Senha é obrigatória");
+            return;
+        }
+
+        try{
+            const url = await fetch(`http://localhost:5010/login/${usuario}/${senha}`);
+            const resposta = await url.json();
+
+            if(resposta.ok){
+                setMsg(resposta.mensagem);
+                navigate("/vincular");
+            }
+            else{
+                setMsg(resposta.mensagem);
+            }
+        }catch(err){
+            setMsg(err.message);
+        }
+
     let url = `http://localhost:5010/login/${usuario}/${senha}`;
 
     let response = await fetch(url);
