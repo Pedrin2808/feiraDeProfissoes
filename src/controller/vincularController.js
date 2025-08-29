@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { vincularVisitante } from "../repository/vincularRepository.js";
+import { vincularQrcode, vincularVisitante } from "../repository/vincularRepository.js";
 
 const api = Router();
 
@@ -16,5 +16,12 @@ api.get('/vincular/:nome', async (req,resp) => {
   }
 
 })
+
+api.post("/vincular/:nome/:qrcode", async (req,resp) => {
+    let nome = req.params.nome;
+    let qrcode = req.params.qrcode;
+    let registros = await vincularQrcode(nome,qrcode);
+    resp.json({mensagemVin: `O Visitante foi vinculado ao QRcode N°: ${qrcode}`})
+})  
 
 export default api
