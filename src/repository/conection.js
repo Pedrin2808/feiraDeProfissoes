@@ -22,7 +22,17 @@ const conectionLoginn = await mysql.createConnection({
     database: 'feira'
 })
 
+const conectionBuscar = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '59222502',
+    database: 'feira'
+})
+
+
+
 await conectionLoginn.query("SET SESSION sql_mode=''")
 await conectionFormulario.query("SET SESSION sql_mode=''");
 await conectionLogin.query("SET SESSION sql_mode=''");
-export {conectionFormulario, conectionLogin, conectionLoginn}
+await conectionBuscar.query("SET SESSION sql_mode=''");
+export {conectionFormulario, conectionLogin, conectionLoginn,conectionBuscar}

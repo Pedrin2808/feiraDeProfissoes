@@ -25,6 +25,7 @@ export default function Turmas() {
   async function vincularCurso() {
     if (!cursoEscolhido) {
       alert("Selecione um curso antes de continuar.");
+      
       return;
     }
 

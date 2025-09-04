@@ -44,7 +44,7 @@ export default function login(){
     setMsg(resposta.mensagem);
 
     if(resposta.ok){
-        navigate("/vincular")
+        navigate("/buscar")
     }
 }
 
