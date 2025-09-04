@@ -191,6 +191,7 @@ export default function Index() {
   const [aluno , setAluno] = useState ("")
   const [sabendo , setSabendo] = useState ("")
 
+// Funções para formatar CPF, CEP e Telefone
   function formatarCPF(value) {
     return value
       .replace(/\D/g, '') // remove tudo que não for número
@@ -215,42 +216,63 @@ export default function Index() {
       .slice(0, 15); // limita tamanho
   }
   
-  
-    async function Formulario() {
-      const dados = {
-        nome,
-        telefone,
-        email,
-        previsao,
-        cpf,
-        cep,
-        interesse,
-        aluno,
-        sabendo
-      };
-  
-      const response = await fetch("http://localhost:5010/formulario", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dados)
-      });
-  
-      if (response.ok) {
-        alert("Inscrição enviada com sucesso!");
-        setNome("");
-        setTelefone("");
-        setEmail("");
-        setPrevisao("");
-        setCpf("");
-        setCep("");
-        setInteresse("");
-        setAluno("");
-        setSabendo("");
-      } else {
-        alert("Erro ao enviar inscrição.");
-      }
+  async function Formulario() {
+  try {
+    let erros = [];
+
+    if (!nome) erros.push("Nome");
+    if (!telefone) erros.push("Telefone");
+    if (!email) erros.push("Email");
+    if (!previsao) erros.push("Previsão de chegada à feira");
+    if (!cpf) erros.push("CPF");
+    if (!cep) erros.push("CEP");
+    if (!interesse) erros.push("Interesse em algum curso");
+    if (!aluno) erros.push("Já foi aluno?");
+    if (!sabendo) erros.push("Como ficou sabendo da feira?");
+
+    if (erros.length > 0) {
+      throw new Error("Por favor, preencha os seguintes campos:\n- " + erros.join("\n- "));
     }
-  
+
+    const dados = {
+      nome,
+      telefone,
+      email,
+      previsao,
+      cpf,
+      cep,
+      interesse,
+      aluno,
+      sabendo,
+    };
+
+    const response = await fetch("http://localhost:5010/formulario", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dados),
+    });
+
+    if (!response.ok) {
+      throw new Error("Erro ao enviar inscrição.");
+    }
+
+    alert("Inscrição enviada com sucesso!");
+    setNome("");
+    setTelefone("");
+    setEmail("");
+    setPrevisao("");
+    setCpf("");
+    setCep("");
+    setInteresse("");
+    setAluno("");
+    setSabendo("");
+
+  } catch (error) {
+    alert(error.message || "Erro ao enviar inscrição.");
+    console.error(error);
+  }
+}
+
 
   return (
     <div className='body'>

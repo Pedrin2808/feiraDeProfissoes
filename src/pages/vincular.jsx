@@ -9,6 +9,7 @@ export default function vincular() {
     const [msg2, setMsg2] = useState("")
 
     async function buscarVisitante() {
+
         let url = `http://localhost:5010/vincular/${nome}`
 
         let response = await fetch(url);
@@ -17,13 +18,30 @@ export default function vincular() {
     }
 
     async function vincularQRcode() {
-        let url = `http://localhost:5010/vincular/${nome}/${qrcode}`;
-    let response = await fetch(url, {
-        method: "POST"
-    });
+        try {
+            if (!nome && !qrcode) {
+                throw new Error("Por favor, Colocar o nome do visitante e o número do Qr Code.");
+            }
 
-    let resposta = await response.json();
-    setMsg2(resposta.mensagemVin);
+            if (!nome) {
+                throw new Error("Por favor, Colocar o nome do visitante.");
+            }
+
+            if(!qrcode) {
+                throw new Error('Colocar o número do Qr Code')
+            }
+
+            let url = `http://localhost:5010/vincular/${nome}/${qrcode}`;
+            let response = await fetch(url, {
+                method: "POST"
+            });
+
+            let resposta = await response.json();
+            setMsg2(resposta.mensagemVin);
+        } catch (error) {
+            setMsg2(error.message);
+        }
+
     }
 
     return (
