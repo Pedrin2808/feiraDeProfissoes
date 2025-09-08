@@ -1,7 +1,91 @@
-.arr{
+.vincular-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background: linear-gradient(0deg, #ffff,#3F6582 );
+  }
+  
+  .vincular-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
     display: flex;
     flex-direction: column;
+  }
+  
+  .tt {
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: 34px;
+    color: black;
+  }
+  
+  .input-label {
+    display: flex;
     align-items: center;
-    gap: 99px;
-    margin-top: 180px;
-}
+    gap: 6px; 
+    font-size: 14px;
+    color: #444;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .input-label .icon {
+    color: black;
+    font-size: 16px;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #eba226, #f5ba53);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    background: linear-gradient(90deg, #cf8c18, #be8626);
+    transform: scale(1.03);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button .icon {
+    font-size: 18px;
+  }
+  
+  P{
+      font-size: 15px;
+  }
+  
+  .msg2 {
+    margin-top: 15px;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+  }
+  
+  
+  .msg {
+    margin-top: 15px;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+  }
+  

@@ -1,20 +1,102 @@
-
-.fundo{
-    background: linear-gradient(0deg, #ffff,#3F6582 );
-    padding: 350px;
-}
-
-.ajust{
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background: linear-gradient(0deg, #ffff,#3F6582 );
+  }
+  
+  .login-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
     display: flex;
     flex-direction: column;
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 34px;
+    color: black;
+  }
+  
+  .input-label {
+    display: flex;
     align-items: center;
-    margin-bottom: 36px;
-}
-
-.esquerda{
-    padding-right: 250px;
-}
-.esquerda2{
-    padding-right: 250px;
-    margin-top: 35px;
-}
+    gap: 6px; 
+    font-size: 14px;
+    color: #444;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .input-label .icon {
+    color: black;
+    font-size: 16px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #eba226, #f5ba53);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    background: linear-gradient(90deg, #cf8c18, #be8626);
+    transform: scale(1.03);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button .icon {
+    font-size: 18px;
+  }
+  
+  .alert.error {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .alert.success {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+  
+    

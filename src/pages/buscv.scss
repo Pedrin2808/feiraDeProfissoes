@@ -1,30 +1,94 @@
-@media (max-width: 768px) {
-    /* Altera a direção da flexbox e remove o espaçamento para caber na tela */
-    .fundo {
-      padding: 50px 20px; /* Reduz o padding para não ocupar muito espaço vertical */
-    }
-  
-    /* Alinha os itens em uma única coluna */
-    .ajust, .arr, .adjus {
-      flex-direction: column;
-      align-items: center;
-      text-align: center; /* Centraliza o texto */
-      margin-top: 50px; /* Reduz o espaçamento superior */
-      gap: 30px; /* Reduz o espaçamento entre os elementos */
-    }
-  
-    /* Remove os paddings laterais desnecessários em telas pequenas */
-    .esquerda, .esquerda2 {
-      padding-right: 0;
-    }
-    
-    .arr {
-        gap: 50px; /* Um espaçamento mais adequado para mobile */
-    }
-  
-    /* Geralmente, elementos com margin-top fixo podem causar problemas em mobile.
-       O ideal é ajustar ou remover. */
-    .adjus, .arr {
-        margin-top: 50px;
-    }
-  }
+.buscar-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #ffff, #3F6582);
+}
+
+.buscar-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: black;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #444;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.input-label .icon {
+  color: black;
+  font-size: 16px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f3f3f3;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #eba226, #f5ba53);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #cf8c18, #be8626);
+  transform: scale(1.03);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.button .icon {
+  font-size: 18px;
+}
+
+.msg {
+  margin-top: 15px;
+  font-size: 16px;
+  color: red;
+  text-align: center;
+}
+
+.resultado {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

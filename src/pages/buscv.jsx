@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { FaSearch, FaIdCard, FaLock } from 'react-icons/fa';
 import './buscv.scss';
 
-// Formata o CPF com pontos e traço
+// Função para formatar o CPF
 function formatarCPF(value) {
   return value
     .replace(/\D/g, '')
@@ -12,7 +13,7 @@ function formatarCPF(value) {
     .slice(0, 14);
 }
 
-// Remove pontos, traços, espaços, etc
+// Função para limpar o CPF
 function limparCPF(cpf) {
   return cpf.replace(/\D/g, '');
 }
@@ -44,42 +45,48 @@ export default function Buscar() {
 
       const data = await resp.json();
       setDados(data);
-
     } catch (err) {
       setErro('Erro ao buscar visitante. Verifique a conexão com o servidor.');
     }
   }
 
   return (
-    <div className="fundo">
-      <h1 className="tt">Buscar Visitante</h1>
+    <div className="buscar-container">
+      <div className="buscar-card">
+        <h1 className="titulo">Buscar Visitante</h1>
 
-      <div className="ajust">
-        <label className="esquerda">CPF</label>
+        <label className="input-label">
+          <FaIdCard className="icon" />
+          CPF
+        </label>
         <input
           value={ncpf}
           onChange={(e) => setNcpf(formatarCPF(e.target.value))}
           placeholder="Digite o CPF"
         />
-        <button className="b5" onClick={buscarPessoa}>Buscar</button>
-      </div>
 
-      {erro && <p style={{ color: 'red' }}>{erro}</p>}
+        <button className="button" onClick={buscarPessoa}>
+          <FaSearch className="icon" /> Buscar
+        </button>
 
-      {dados && (
-        <section className="forms">
-          <div>
-            <label>Nome</label>
+        {erro && <p className="msg">{erro}</p>}
+
+        {dados && (
+          <section className="resultado">
+            <label className="input-label">Nome</label>
             <input value={dados.nome} readOnly />
 
-            <label>CPF</label>
+            <label className="input-label">CPF</label>
             <input value={formatarCPF(dados.cpf)} readOnly />
-          </div>
-          <div>
-            <Link to={'/vincular'}><button>Vincular</button></Link> 
-          </div>
-        </section>
-      )}
+
+            <Link to="/vincular">
+              <button className="button">
+                <FaLock className="icon" /> Vincular
+              </button>
+            </Link>
+          </section>
+        )}
+      </div>
     </div>
   );
 }

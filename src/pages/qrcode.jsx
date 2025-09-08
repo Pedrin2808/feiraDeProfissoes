@@ -1,19 +1,23 @@
 import {Link} from 'react-router'
-
+import './qrcode.scss';
 
 export default function qr(){
 
     return(
         
-<div className='arr'>
-    <div>
-        <img src = "/src/assets/images/feiradep.png"></img>
+<div className='qr-container'>
+    <div className='qr-card'>
+        <div >
+        <img  src = "/src/assets/images/feiradep.png"></img>
     </div>
-    <div classNahme='fundo2'>
+    <div>
         <img src = "/src/assets/images/qrcode.png" height = "380px"></img>
     </div>
 </div>
+</div>
     )
 }
+
+
 
 

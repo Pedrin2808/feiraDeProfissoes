@@ -1,6 +1,8 @@
 import { useState } from "react"
 import "./login2.scss"
 import { useNavigate } from "react-router";
+import { FaUser, FaLock } from "react-icons/fa"; 
+
 
 export default function Login() {
   const [usuario, setUsuario] = useState("")
@@ -43,37 +45,31 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <div className="adjus">
+    <div className="login2-container">
+      <div className="login2-card">
+        <div>
         <img src="/src/assets/images/feiradep.png" alt="Logo" />
-      </div>
-
-      <div className="fundo2">
-        <h1 className="tt">Login</h1>
-
-        <div className="ajust">
-          <label className="esquerda">Usuário</label>
-          <input
-            type="text"
-            value={usuario}
-            onChange={(e) => setUsuario(e.target.value)}
-          />
-
-          <label className="esquerda2">Senha</label>
-          <input
-            type="password"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-          />
-<br />
-          <button className="b5" onClick={verificarLoginOculto}>
-            Entrar
-          </button>
-          <br />
-
-          <p className="mensagem">{msg}</p> 
+        </div>
+            <h1 className='titulo'>Login</h1>
+         <label className="input-label">
+          <FaUser className="icon" />
+          Usuário
+        </label>                    
+        <input id='usuario-input' 
+        value={usuario} 
+        onChange = {(e)=> setUsuario(e.target.value)}/>
+        <label className="input-label">
+          <FaLock className="icon" />
+          Senha
+        </label>                    
+        <input id='senha-input'
+         value={senha} 
+         onChange = {(e)=> setSenha(e.target.value)}/>
+         <button className='button' onClick={verificarLoginOculto}>
+                  <FaLock className="icon" /> LOGIN
+                </button>            
+                <p className="msg">{msg}</p>
         </div>
       </div>
-    </div>
   )
 }

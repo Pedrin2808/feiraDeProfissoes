@@ -126,6 +126,7 @@ const FAQ = () => {
 };
 
 export default function Index() {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -191,6 +192,12 @@ export default function Index() {
   const [aluno , setAluno] = useState ("")
   const [sabendo , setSabendo] = useState ("")
 
+  const [msg, setMsg] = useState('');
+  const [tipoMsg, setTipoMsg] = useState('');
+  const [erros, setErros] = useState({});
+
+
+
 // Funções para formatar CPF, CEP e Telefone
   function formatarCPF(value) {
     return value
@@ -203,11 +210,9 @@ export default function Index() {
   
     function formatarCEP(value) {
     return value
-    .replace(/\D/g, '') 
-    .replace(/(\d{3})(\d)/, '$1.$2') 
-    .replace(/(\d{3})(\d)/, '$1.$2') 
-    .replace(/(\d{3})(\d{1,2})$/, '$1-$2')
-    .slice(0, 14); 
+      .replace(/\D/g, '')
+      .replace(/(\d{5})(\d)/, '$1-$2') // 12345-678
+      .slice(0, 9); // limita tamanho
   }
   
     function formatarTelefone(value) {
@@ -220,22 +225,25 @@ export default function Index() {
   
   async function Formulario() {
   try {
-    let erros = [];
+    let erros = {};
 
-    if (!nome) erros.push("Nome");
-    if (!telefone) erros.push("Telefone");
-    if (!email) erros.push("Email");
-    if (!previsao) erros.push("Previsão de chegada à feira");
-    if (!cpf) erros.push("CPF");
-    if (!cep) erros.push("CEP");
-    if (!interesse) erros.push("Interesse em algum curso");
-    if (!aluno) erros.push("Já foi aluno?");
-    if (!sabendo) erros.push("Como ficou sabendo da feira?");
-
-    if (erros.length > 0) {
-      throw new Error("Por favor, preencha os seguintes campos:\n- " + erros.join("\n- "));
+    if (!nome) erros.nome = "Informar o Nome é obrigatório";
+    if (!telefone) erros.telefone = "Informar o Telefone é obrigatório";
+    if (!email) erros.email = "Informar o Email é obrigatório";
+    if (!previsao) erros.previsao = "Informar a previsão de chegada é obrigatório";
+    if (!cpf) erros.cpf = "Informar o seu CPF é obrigatório";
+    if (!cep) erros.cep = "Informar o seu CEP é obrigatório";
+    if (!interesse) erros.interesse = "Informar seu Interesse é obrigatório";
+    if (!aluno) erros.aluno = "Informar se já foi aluno é obrigatório";
+    if (!sabendo) erros.sabendo = "Informar como ficou sabendo é obrigatório";
+    
+    if (Object.keys(erros).length > 0) {
+      const mensagemErros = Object.values(erros)
+        .map(msg => "- " + msg)
+        .join("\n");
+    
+      throw new Error("Por favor, preencha os seguintes campos:\n" + mensagemErros);
     }
-
     const dados = {
       nome,
       telefone,
@@ -269,8 +277,9 @@ export default function Index() {
     setAluno("");
     setSabendo("");
 
-  } catch (error) {
-    alert(error.message || "Erro ao enviar inscrição.");
+  }  catch (error) {
+    setMsg(error.message || "Erro ao enviar inscrição.");
+    setTipoMsg("error");
     console.error(error);
   }
 }
@@ -483,9 +492,13 @@ export default function Index() {
                   <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.877780335286!2d-46.710505823997686!3d-23.68032836597489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d2289a843%3A0x14406b17b30d0174!2sInstituto%20Social%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1755524751181!5m2!1spt-BR!2sbr" width="90%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
-            <h6 ref={formSectionRef} ></h6>
 
+            <h6 ref={formSectionRef} ></h6>
+             
+          {msg && <p className={`alert ${tipoMsg}`}>{msg}</p>}
             <h1  className='tt'>Formulário</h1>
+
+
 
             <section   id="forms" className='forms'>
           <div className='colorir1'>
@@ -493,25 +506,56 @@ export default function Index() {
               <div className='oi'>
                 <div className='vertical1'>
                   <label>Nome</label>
-                  <input id='input-nome' value={nome} onChange={(e) => setNome(e.target.value)} />
+                  <input id='input-nome' 
+                  value={nome} 
+                  onChange={(e) => setNome(e.target.value)} 
+                  className={erros.nome ? "input-error" : ""}/>
+                  {erros.nome && <p className="error-message">{erros.nome}</p>}
                   <label>Telefone</label>
-                  <input id='input-telefone' value={telefone} onChange={(e) => setTelefone(formatarTelefone(e.target.value))} />
+                  <input id='input-telefone'
+                   value={telefone} 
+                   onChange={(e) => setTelefone(formatarTelefone(e.target.value))} 
+                   className={erros.telefone ? "input-error" : ""}/>
+                  {erros.telefone && <p className="error-message">{erros.telefone}</p>}
                   <label>Email</label>
-                  <input id='input-email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input id='input-email'
+                   value={email}
+                   onChange={(e) => setEmail(e.target.value)} 
+                  className={erros.email ? "input-error" : ""}/>
+                  {erros.email && <p className="error-message">{erros.email}</p>}
                   <label>Previsão de chegada à feira</label>
-                  <input id='input-previ' value={previsao} onChange={(e) => setPrevisao(e.target.value)} />
+                  <input id='input-previ' 
+                  value={previsao} 
+                  onChange={(e) => setPrevisao(e.target.value)}
+                  className={erros.previsao ? "input-error" : ""} />
+                  {erros.previsao && <p className="error-message">{erros.previsao}</p>}
                 </div>
 
                 <div className='vertical1'>
                   <label>CPF</label>
-                  <input id='input-cpf' value={cpf} onChange={(e) => setCpf(formatarCPF(e.target.value))} />
+                  <input id='input-cpf' 
+                  value={cpf} 
+                  onChange={(e) => setCpf(formatarCPF(e.target.value))}
+                  className={erros.cpf ? "input-error" : ""}
+                   />
+                  {erros.cpf && <p className="error-message">{erros.cpf}</p>}
+
                   <label>CEP</label>
-                  <input id='input-cep' value={cep} onChange={(e) => setCep(formatarCEP(e.target.value))} />
+                  <input id='input-cep' 
+                  value={cep} 
+                  onChange={(e) => setCep(formatarCEP(e.target.value))}
+                  className={erros.cep ? "input-error" : ""} />
+                  {erros.cep && <p className="error-message">{erros.cep}</p>}
 
                   <label htmlFor='input-curso'>Interesse em algum curso</label>
                   <input type="text"
                     id="input-curso"
-                    list="lista-curso" value={interesse} onChange={(e) => setInteresse(e.target.value)} />
+                    list="lista-curso"
+                     value={interesse}
+                      onChange={(e) => setInteresse(e.target.value)}
+                      className={erros.interesse ? "input-error" : ""} />
+                    {erros.interesse && <p className="error-message">{erros.interesse}</p>}
+
 
                   <datalist id="lista-curso">
                     {curso.map((curso, index) => (
@@ -521,7 +565,9 @@ export default function Index() {
                   <label htmlFor='input-aluno'>ja foi aluno?</label>
                   <input type="text"
                     id="input-aluno"
-                    list="lista-aluno" value={aluno} onChange={(e) => setAluno(e.target.value)} />
+                    list="lista-aluno" value={aluno} onChange={(e) => setAluno(e.target.value)} 
+                    className={erros.aluno ? "input-error" : ""}/>
+                  {erros.aluno && <p className="error-message">{erros.aluno}</p>}
 
                   <datalist id="lista-aluno">
                     {alunoo.map((aluno, index) => (
@@ -534,10 +580,12 @@ export default function Index() {
               <div className='horizonte'>
                 <label htmlFor='input-sabendo'>Como ficou sabendo da feira?</label>
                 <input
-                  className='input-sabendo'
-                  type="text"
+                 className={erros.sabendo ? "input-error" : ""}                  
+                 type="text"
                   id="input-sabendo"
                   list="lista-sabendo" value={sabendo} onChange={(e) => setSabendo(e.target.value)} />
+                {erros.sabendo && <p className="error-message">{erros.sabendo}</p>}
+
                 <datalist id="lista-sabendo">
                   {sabendoo.map((sabendo, index) => (
                     <option key={index} value={sabendo} />

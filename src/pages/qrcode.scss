@@ -1,0 +1,21 @@
+.qr-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background: linear-gradient(0deg, #ffff,#3F6582 );
+  }
+  
+  .qr-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  

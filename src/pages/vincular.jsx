@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import './vincular.scss'
+import { FaUser, FaLock, FaUber } from "react-icons/fa"; 
+
 
 export default function vincular() {
     const [nome, setNome] = useState("")
@@ -45,21 +47,28 @@ export default function vincular() {
     }
 
     return (
-        <div className='fundo'>
-            <h1 className='tt'>Vincular</h1>
-            <div className='ajust'>
-                <div className='ajust'>
-                    <label className='esquerda'>Nome</label>
-                    <input value={nome} onChange={(e) => setNome(e.target.value)} />
-                    <br />
-                    <button className='b5' onClick={buscarVisitante}>Buscar Visitante</button>
-                    <p>{msg}</p>
-                    <label className='esquerda2'>N. QR Code</label>
-                    <input value={qrcode} onChange={(e) => setQrcode(e.target.value)} />
-                </div>
-                <button className='b5' onClick={vincularQRcode}>Vincular qrCode</button>
-            </div>
-            <p>{msg2}</p>
+        <div className='vincular-container'>
+        <div className='vincular-card'>
+        <h1 className='tt'>Vincular</h1>
+             <label className="input-label">
+              <FaUser className="icon" />
+              Nome
+            </label>                    
+            <input
+            value={nome} 
+            onChange = {(e)=> setNome(e.target.value)}/>
+            <label className="input-label">
+              <FaLock className="icon" />
+              QrCode
+            </label>                    
+            <input 
+             value={qrcode} 
+             onChange = {(e)=> setQrcode(e.target.value)}/>
+             <button className='button' onClick={vincularQRcode}>
+                 <p>VINCULAR</p>
+                    </button>            
+                    <p className="msg">{msg2}</p>
         </div>
+    </div>
     )
 }
